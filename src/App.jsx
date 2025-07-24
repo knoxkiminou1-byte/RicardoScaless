@@ -8,7 +8,7 @@ function App() {
       minHeight: '100vh',
       backgroundColor: '#000000',
       color: 'white',
-      fontFamily: "'Inter', sans-serif"
+      fontFamily: "'Playfair Display', serif"
     }}>
       {/* Navigation Header */}
       <header style={{
@@ -39,26 +39,57 @@ function App() {
           </div>
           <nav style={{
             display: 'flex',
-            gap: '40px'
+            gap: '35px'
           }}>
-            <a href="#story" style={{
+            <a href="#home" style={{
               color: 'white',
               textDecoration: 'none',
               fontSize: '16px',
+              fontWeight: '400',
               transition: 'color 0.3s ease'
-            }}>My Story</a>
+            }}>Home</a>
+            <a href="#bio" style={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '16px',
+              fontWeight: '400',
+              transition: 'color 0.3s ease'
+            }}>Bio</a>
             <a href="#tour" style={{
               color: 'white',
               textDecoration: 'none',
               fontSize: '16px',
+              fontWeight: '400',
               transition: 'color 0.3s ease'
-            }}>Final Tour</a>
-            <a href="#bookings" style={{
+            }}>Tour</a>
+            <a href="#music" style={{
               color: 'white',
               textDecoration: 'none',
               fontSize: '16px',
+              fontWeight: '400',
               transition: 'color 0.3s ease'
-            }}>Bookings</a>
+            }}>Music</a>
+            <a href="#merch" style={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '16px',
+              fontWeight: '400',
+              transition: 'color 0.3s ease'
+            }}>Merch</a>
+            <a href="#videos" style={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '16px',
+              fontWeight: '400',
+              transition: 'color 0.3s ease'
+            }}>Videos</a>
+            <a href="#contact" style={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '16px',
+              fontWeight: '400',
+              transition: 'color 0.3s ease'
+            }}>Contact</a>
           </nav>
         </div>
       </header>
