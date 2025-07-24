@@ -29,15 +29,21 @@ function App() {
           alignItems: 'center'
         }}>
           <div style={{
-            fontSize: '32px',
-            fontFamily: "'Dancing Script', cursive",
+            fontSize: '42px',
+            fontFamily: "'Allura', cursive",
             color: '#C28840',
-            fontWeight: '700',
-            letterSpacing: '1px',
-            textShadow: '0 2px 4px rgba(194, 136, 64, 0.3)',
-            transform: 'rotate(-1deg)'
+            fontWeight: '400',
+            letterSpacing: '2px',
+            textShadow: '0 3px 8px rgba(194, 136, 64, 0.4), 0 0 15px rgba(194, 136, 64, 0.2)',
+            transform: 'rotate(-2deg)',
+            position: 'relative',
+            background: 'linear-gradient(45deg, #C28840, #E6B973, #C28840)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            filter: 'drop-shadow(0 2px 4px rgba(194, 136, 64, 0.3))'
           }}>
-            Ricardo Scales
+            ℜ𝒾𝒸𝒶𝓇𝒹𝑜 𝒮𝒸𝒶𝓁𝑒𝓈
           </div>
           <nav style={{
             display: 'flex',
