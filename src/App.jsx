@@ -72,4 +72,28 @@ function App() {
       <section style={{
         minHeight: '100vh',
         display: 'flex',
-        alignItems:
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '0 40px'
+      }}>
+        <div>
+          <h1 style={{
+            fontSize: '4rem',
+            fontFamily: "'Playfair Display', serif",
+            color: '#C28840',
+            marginBottom: '20px',
+            fontWeight: '500'
+          }}>
+            Ricardo Scales
+          </h1>
+          <p style={{
+            fontSize: '1.5rem',
+            color: 'rgba(255,255,255,0.8)',
+            marginBottom: '40px'
+          }}>
+            Welcome to my world
+          </p>
+        </div>
+      </section>
+    </div>
