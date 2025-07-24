@@ -24,7 +24,7 @@ function App() {
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-serif text-yellow-600 mb-6 elegant-fade">
+          <h1 className="text-5xl md:text-7xl font-serif text-yellow-600 mb-6">
             Ricardo Scales
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-4">
