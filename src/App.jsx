@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './App.css';
 
@@ -124,7 +123,7 @@ function App() {
             }}>
               Ricardo Scales: Composer, Civic Virtuoso, Cultural Pillar
             </h1>
-            
+
             <p style={{
               fontSize: '1.125rem',
               color: 'rgba(255,255,255,0.9)',
@@ -163,7 +162,7 @@ function App() {
               }}>
                 Book an Event
               </button>
-              
+
               <button style={{
                 backgroundColor: 'transparent',
                 color: '#C28840',
@@ -227,7 +226,7 @@ function App() {
             }}>
               A Legacy of Musical Excellence
             </h2>
-            
+
             <blockquote style={{
               borderLeft: '4px solid rgba(255,255,255,0.3)',
               paddingLeft: '30px',
@@ -240,7 +239,7 @@ function App() {
             }}>
               "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
             </blockquote>
-            
+
             <cite style={{
               fontSize: '1rem',
               color: 'rgba(255,255,255,0.8)',
@@ -263,7 +262,7 @@ function App() {
               dedicated his talents to cultural enrichment, performing at prestigious venues while 
               maintaining deep community connections.
             </p>
-            
+
             <p style={{
               fontSize: '1.125rem',
               lineHeight: '1.7',
@@ -302,8 +301,9 @@ function App() {
           {/* First row - Early Beginnings and Rise to Prominence */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '40px',
+            alignItems: 'start',
             marginBottom: '40px'
           }}>
             {/* Early Beginnings Card */}
@@ -386,41 +386,49 @@ function App() {
           </div>
 
           {/* Second row - Cultural Leadership (full width) */}
-          <div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '40px'
+          }}>
+            {/* Cultural Leadership Card - Full Width */}
             <div style={{
               backgroundColor: '#2a2a2a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease'
+              transition: 'transform 0.3s ease',
+              display: 'grid',
+              gridTemplateColumns: '1fr 2fr',
+              alignItems: 'center'
             }}>
               <div style={{
-                height: '250px',
+                height: '300px',
                 background: 'linear-gradient(45deg, #4A4A4A, #C28840)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '4rem',
+                fontSize: '5rem',
                 color: 'white'
               }}>
                 🎭
               </div>
               <div style={{
-                padding: '30px'
+                padding: '40px'
               }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
+                  fontSize: '2rem',
                   fontFamily: "'Playfair Display', serif",
-                  marginBottom: '20px',
+                  marginBottom: '25px',
                   color: 'white'
                 }}>
                   Cultural Leadership
                 </h3>
                 <p style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
+                  fontSize: '1.125rem',
+                  lineHeight: '1.7',
                   color: 'rgba(255,255,255,0.8)'
                 }}>
-                  Today, Ricardo stands as a cultural pillar, balancing international performances with music education initiatives and civic engagement projects that bring artistic excellence to diverse communities.
+                  Today, Ricardo stands as a cultural pillar, balancing international performances with music education initiatives and civic engagement projects that bring artistic excellence to diverse communities. His leadership extends beyond the stage, fostering the next generation of musicians while preserving the rich traditions that define our cultural heritage.
                 </p>
               </div>
             </div>
