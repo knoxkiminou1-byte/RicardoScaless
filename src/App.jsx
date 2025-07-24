@@ -299,11 +299,12 @@ function App() {
             Musical Journey
           </h2>
 
+          {/* First row - Early Beginnings and Rise to Prominence */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gridTemplateColumns: '1fr 1fr',
             gap: '40px',
-            alignItems: 'start'
+            marginBottom: '40px'
           }}>
             {/* Early Beginnings Card */}
             <div style={{
@@ -382,8 +383,10 @@ function App() {
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* Cultural Leadership Card */}
+          {/* Second row - Cultural Leadership (full width) */}
+          <div>
             <div style={{
               backgroundColor: '#2a2a2a',
               borderRadius: '12px',
