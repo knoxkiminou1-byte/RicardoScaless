@@ -94,16 +94,7 @@ function Contact() {
           maxWidth: '800px',
           padding: '0 40px'
         }}>
-          <h1 style={{
-            fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontFamily: "'Playfair Display', serif",
-            color: '#C28840',
-            marginBottom: '30px',
-            fontWeight: '400',
-            lineHeight: '1.2'
-          }}>
-            Connect with Ricardo
-          </h1>
+          
           <p style={{
             fontSize: '1.3rem',
             color: 'rgba(255,255,255,0.9)',
