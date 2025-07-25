@@ -34,9 +34,10 @@ function App() {
             color: '#C28840',
             fontWeight: '400',
             letterSpacing: '2px',
-            textShadow: '0 3px 8px rgba(194, 136, 64, 0.4), 0 0 15px rgba(194, 136, 64, 0.2)',
+            textShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(194, 136, 64, 0.6), 0 0 20px rgba(194, 136, 64, 0.3)',
             transform: 'rotate(-1deg)',
-            position: 'relative'
+            position: 'relative',
+            filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7))'
           }}>
             Ricardo Scales
           </div>
