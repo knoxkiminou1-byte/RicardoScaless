@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Scales - The Black Liberace | Official Biography</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><g fill="%23fff" opacity="0.1"><rect x="100" y="200" width="80" height="400"/><rect x="200" y="150" width="80" height="500"/><rect x="300" y="180" width="80" height="440"/><rect x="400" y="120" width="80" height="560"/><rect x="500" y="160" width="80" height="480"/><rect x="600" y="100" width="80" height="600"/><rect x="700" y="140" width="80" height="520"/><rect x="800" y="110" width="80" height="580"/><rect x="900" y="170" width="80" height="460"/><rect x="1000" y="130" width="80" height="540"/></g></svg>') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #f0f0f0;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 4rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            border: 5px solid #ffd700;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: block;
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-nickname {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-details {
+            text-align: left;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .profile-details h4 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .profile-details ul {
+            list-style: none;
+        }
+
+        .profile-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .profile-details li::before {
+            content: '♪';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .bio-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .bio-content h3 {
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid #ffd700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .highlight-box h4 {
+            color: #856404;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .achievement-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .discography-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .album-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .album-title {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .album-year {
+            color: #666;
+            font-style: italic;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .profile-card {
+                position: static;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .quote-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Ricardo Scales</h1>
+            <p class="hero-subtitle">"The Black Liberace" • "The Black Prince"</p>
+            <p class="hero-description">
+                A Musical Journey Spanning Four Decades in the San Francisco Bay Area
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <p>↓ Discover the Legend ↓</p>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">The Musical Biography</h2>
+            
+            <div class="bio-grid">
+                <div class="profile-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'><rect fill='%23f8f9fa' width='250' height='250'/><circle cx='125' cy='100' r='40' fill='%23666'/><path d='M85 140 Q125 120 165 140 L165 200 Q125 220 85 200 Z' fill='%23666'/><text x='125' y='230' text-anchor='middle' fill='%23333' font-size='12'>Photo Placeholder</text></svg>" alt="Ricardo Scales" class="profile-image">
+                    
+                    <h3 class="profile-name">Ricardo Scales</h3>
+                    <p class="profile-nickname">"The Black Liberace"</p>
+                    
+                    <div class="profile-details">
+                        <h4>Quick Facts</h4>
+                        <ul>
+                            <li>Born: circa 1952 (age 72)</li>
+                            <li>Birthplace: San Francisco, CA</li>
+                            <li>Genres: Jazz, Classical, Gospel, Funk, R&B</li>
+                            <li>Instruments: Piano, Trombone</li>
+                            <li>Years Active: 1970s–present</li>
+                            <li>Labels: DPMG Records, Bay Sound Records</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bio-content">
+                    <p>
+                        Ricardo Scales is an American pianist, composer, and cultural ambassador whose career has spanned over four decades in the San Francisco Bay Area music scene. A conservatory-trained virtuoso whose artistry bridges classical, jazz, gospel, funk, and R&B, Scales has established himself as both a premier entertainer and a vital community leader.
+                    </p>
+
+                    <h3>Early Life and Musical Foundation</h3>
+                    <p>
+                        Born into a musical dynasty, Ricardo Scales is the son of Patience Scales, a renowned music teacher and philanthropist who profoundly shaped both his artistic development and his understanding of music's social responsibility. His formal musical education began at age five under his mother's guidance, with Patience finding a miniature piano perfectly sized for her young son's hands.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <h4>The Parade of Youth Arts Foundation</h4>
+                        <p>
+                            In 1959, Ricardo's mother Patience founded the groundbreaking "Parade of Youth" Arts Foundation, dedicated to developing musical and performing arts skills of youth from lower-income backgrounds. The foundation held annual recitals at the prestigious San Francisco War Memorial Opera House for over a decade, sending a powerful message that young artists from all backgrounds deserved to showcase their talents on the grandest stages.
+                        </p>
+                    </div>
+
+                    <p>
+                        At age eleven, Ricardo's exceptional talent attracted the attention of Lillian Hodgehead, a founder of the San Francisco Conservatory of Music, leading to an eight-year scholarship. Remarkably, Hodgehead had also mentored his mother, creating a multi-generational lineage of high-level musical instruction.
+                    </p>
+
+                    <h3>The Defining Crisis and Triumph</h3>
+                    <p>
+                        At age 19, just as his prodigious talent was poised to launch a major career, Ricardo faced what seemed like an insurmountable tragedy. A catastrophic accident resulted in the paralysis of his left hand, with severed cords causing three fingers to curl uselessly into his palm. The medical establishment was unanimous: his dream of being a concert pianist was over.
+                    </p>
+                    
+                    <p>
+                        Refusing to accept this verdict, Scales embarked on what would become the defining journey of his life. He became his own therapist, using his functional right hand to physically reteach his paralyzed left hand. Through sheer, unyielding will, he achieved what the medical community had deemed impossible, not only regaining use of his left hand but restoring it to full power.
+                    </p>
+
+                    <h3>The Rise of a San Francisco Institution</h3>
+                    <p>
+                        Having reclaimed his gift, Scales made his grand re-entry in 1982 with a remarkable 14-year residency at the historic Redwood Room in San Francisco's Clift Hotel. The venue became a must-visit destination for touring musicians, with stars like Billy Joel, Harry Connick Jr., Liza Minnelli, and Joe Cocker joining him for impromptu collaborations.
+                    </p>
+                    
+                    <p>
+                        Following his celebrated run at the Redwood Room, Scales ascended to the Top of the Mark at the InterContinental Mark Hopkins hotel around 1996, presiding over this legendary 19th-floor lounge for more than two decades. His performances became integral to San Francisco's entertainment landscape, earning recognition from former Mayor Willie Brown.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Musical Philosophy Quote -->
+    <section class="quote-section">
+        <div class="container">
+            <p class="quote-text">
+                "The piano must be restored to its place of prominence in popular music, bridging classical sophistication with the improvisational freedom of jazz."
+            </p>
+            <p class="quote-author">— Ricardo Scales on his "Third Stream" Philosophy</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Notable Achievements</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h4>Presidential Performances</h4>
+                    <p>Performed for five U.S. Presidents and current Vice President Kamala Harris, establishing himself as a trusted cultural ambassador</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>International Recognition</h4>
+                    <p>Personally requested by former British Prime Minister Tony Blair for a private concert performance</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>Billboard Recognition</h4>
+                    <p>2008 Billboard Latin Music Awards nomination for "Album of the Year" in Latin Jazz category for "I'm Here!"</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>Community Guardian</h4>
+                    <p>Single-handedly saved the Fillmore Jazz Festival in 2025, organizing musicians to perform in churches throughout the district</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discography Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Selected Discography</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #666;">
+                Over 30 albums released to international critical acclaim
+            </p>
+            
+            <div class="discography-list">
+                <div class="album-card">
+                    <h4 class="album-title">Forever Love</h4>
+                    <p class="album-year">1996</p>
+                </div>
+                
+                <div class="album-card">
+                    <h4 class="album-title">I'm Here!</h4>
+                    <p class="album-year">2007 • Billboard Nominee</p>
+                </div>
+                
+                <div class="album-card">
+                    <h4 class="album-title">How Great Thou Art</h4>
+                    <p class="album-year">2010</p>
+                </div>
+                
+                <div class="album-card">
+                    <h4 class="album-title">All the Way</h4>
+                    <p class="album-year">2016</p>
+                </div>
+                
+                <div class="album-card">
+                    <h4 class="album-title">I Like the Way You Are</h4>
+                    <p class="album-year">2019</p>
+                </div>
+                
+                <div class="album-card">
+                    <h4 class="album-title">My Piano Dances With Me</h4>
+                    <p class="album-year">2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Legacy and Impact</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 2rem;">
+                    Ricardo Scales represents more than individual artistic achievement; he embodies the intersection of musical excellence, community leadership, and cultural preservation. His journey from a five-year-old prodigy to the guardian of San Francisco's jazz heritage illustrates the power of artistic dedication coupled with social responsibility.
+                </p>
+                
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #666;">
+                    Today, Ricardo Scales stands as San Francisco's musical ambassador, a living bridge between the city's golden age of entertainment and its ongoing cultural evolution. His legacy is measured not only in the notes he has played but in the pathways he has created for others, the traditions he has preserved, and the community he continues to serve with unwavering dedication.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ricardo Scales Biography. A tribute to musical excellence and community service.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.content-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.achievement-card, .album-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
