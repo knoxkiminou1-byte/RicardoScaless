@@ -97,7 +97,7 @@ function Music() {
             width: '232px',
             height: '232px',
             borderRadius: '50%',
-            backgroundImage: 'url("/attached_assets/piano_performance_bw.png")',
+            backgroundImage: 'url("/attached_assets/ricardo upsclaed_1753392463500.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             boxShadow: '0 4px 60px rgba(0,0,0,.5)'
@@ -408,7 +408,7 @@ function Music() {
               width: '120px',
               height: '120px',
               borderRadius: '50%',
-              backgroundImage: 'url("/attached_assets/piano_performance_bw.png")',
+              backgroundImage: 'url("/attached_assets/ricardo upsclaed_1753392463500.png")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               flexShrink: 0
