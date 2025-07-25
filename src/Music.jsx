@@ -86,106 +86,203 @@ function Music() {
 
       {/* Hero Section */}
       <section style={{
-        minHeight: '60vh',
-        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("/attached_assets/ricardo upsclaed_1753392463500.png")',
+        minHeight: '80vh',
+        background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("/attached_assets/ricardo upsclaed_1753392463500.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
         display: 'flex',
         alignItems: 'center',
-        padding: '120px 40px 0',
+        padding: '140px 40px 0',
         position: 'relative'
       }}>
         <div style={{
-          maxWidth: '1200px',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'radial-gradient(circle at 50% 30%, rgba(194, 136, 64, 0.15) 0%, transparent 70%)',
+          pointerEvents: 'none'
+        }}></div>
+        
+        <div style={{
+          maxWidth: '1400px',
           margin: '0 auto',
           width: '100%',
-          textAlign: 'center'
+          textAlign: 'center',
+          position: 'relative',
+          zIndex: 2
         }}>
-          <h1 style={{
-            fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontFamily: "'Playfair Display', serif",
-            color: '#C28840',
-            marginBottom: '20px',
-            fontWeight: '400',
-            lineHeight: '1.2',
-            letterSpacing: '-0.02em'
-          }}>
-            MUSIC
-          </h1>
           <div style={{
-            fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
-            color: 'rgba(255,255,255,0.9)',
+            fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
+            color: '#C28840',
+            fontWeight: '300',
+            letterSpacing: '4px',
             marginBottom: '30px',
-            fontStyle: 'italic'
+            textTransform: 'uppercase',
+            fontFamily: "'Playfair Display', serif"
           }}>
-            A Legacy of Musical Excellence
+            Musical Archives
           </div>
+          
+          <h1 style={{
+            fontSize: 'clamp(4.5rem, 10vw, 8rem)',
+            fontFamily: "'Playfair Display', serif",
+            color: 'white',
+            marginBottom: '40px',
+            fontWeight: '400',
+            lineHeight: '0.9',
+            letterSpacing: '-0.03em',
+            textShadow: '0 8px 32px rgba(0,0,0,0.8), 0 0 60px rgba(194, 136, 64, 0.3)'
+          }}>
+            MASTERWORKS
+          </h1>
+          
+          <div style={{
+            fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)',
+            color: 'rgba(255,255,255,0.95)',
+            marginBottom: '50px',
+            fontStyle: 'italic',
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: '300',
+            lineHeight: '1.4'
+          }}>
+            Four Decades of Virtuoso Excellence
+          </div>
+          
+          <div style={{
+            width: '200px',
+            height: '2px',
+            background: 'linear-gradient(to right, transparent, #C28840, transparent)',
+            margin: '0 auto',
+            marginBottom: '40px'
+          }}></div>
+          
+          <p style={{
+            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+            color: 'rgba(255,255,255,0.8)',
+            maxWidth: '800px',
+            margin: '0 auto',
+            lineHeight: '1.6',
+            fontWeight: '300'
+          }}>
+            From intimate salon performances to grand concert halls, explore the complete musical journey of Ricardo Scales—The Black Liberace whose artistry transcends genres and generations.
+          </p>
         </div>
       </section>
 
       {/* Discography Section */}
       <section style={{
-        backgroundColor: '#000000',
-        padding: '80px 40px'
+        backgroundColor: '#0a0a0a',
+        padding: '120px 40px',
+        borderTop: '1px solid rgba(194, 136, 64, 0.2)'
       }}>
         <div style={{
-          maxWidth: '1200px',
+          maxWidth: '1400px',
           margin: '0 auto'
         }}>
-          <h2 style={{
-            fontSize: '3rem',
-            fontFamily: "'Playfair Display', serif",
-            color: '#C28840',
+          <div style={{
             textAlign: 'center',
-            marginBottom: '60px',
-            fontWeight: '400'
+            marginBottom: '100px'
           }}>
-            DISCOGRAPHY
-          </h2>
+            <div style={{
+              fontSize: '1.2rem',
+              color: '#C28840',
+              fontWeight: '300',
+              letterSpacing: '3px',
+              marginBottom: '20px',
+              textTransform: 'uppercase',
+              fontFamily: "'Playfair Display', serif"
+            }}>
+              Complete Collection
+            </div>
+            
+            <h2 style={{
+              fontSize: 'clamp(3.5rem, 7vw, 5.5rem)',
+              fontFamily: "'Playfair Display', serif",
+              color: 'white',
+              marginBottom: '30px',
+              fontWeight: '400',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em'
+            }}>
+              DISCOGRAPHY
+            </h2>
+            
+            <div style={{
+              width: '150px',
+              height: '2px',
+              background: 'linear-gradient(to right, transparent, #C28840, transparent)',
+              margin: '0 auto',
+              marginBottom: '30px'
+            }}></div>
+            
+            <p style={{
+              fontSize: '1.3rem',
+              color: 'rgba(255,255,255,0.8)',
+              maxWidth: '600px',
+              margin: '0 auto',
+              lineHeight: '1.6',
+              fontStyle: 'italic',
+              fontWeight: '300'
+            }}>
+              A curated collection of musical excellence, each album a chapter in the legend of Ricardo Scales
+            </p>
+          </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '30px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '40px'
           }}>
             {/* Album 1 - I'm Here! */}
             <div style={{
               backgroundColor: '#1a1a1a',
-              borderRadius: '12px',
-              padding: '20px',
-              border: '1px solid rgba(194, 136, 64, 0.2)'
+              borderRadius: '16px',
+              padding: '35px',
+              border: '2px solid rgba(194, 136, 64, 0.3)',
+              background: 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(194, 136, 64, 0.1)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
             }}>
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '15px',
-                marginBottom: '20px'
+                gap: '20px',
+                marginBottom: '30px'
               }}>
                 <div style={{
-                  width: '60px',
-                  height: '60px',
-                  backgroundColor: '#C28840',
-                  borderRadius: '6px',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #C28840 0%, #D4A564 100%)',
+                  borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '18px',
-                  fontWeight: 'bold'
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  boxShadow: '0 8px 16px rgba(194, 136, 64, 0.3)'
                 }}>
                   IH
                 </div>
                 <div>
                   <h3 style={{
-                    fontSize: '1.2rem',
+                    fontSize: '1.6rem',
                     color: '#C28840',
-                    margin: '0 0 5px 0'
+                    margin: '0 0 8px 0',
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: '400'
                   }}>
                     I'm Here!
                   </h3>
                   <p style={{
-                    fontSize: '0.9rem',
-                    color: 'rgba(255,255,255,0.7)',
-                    margin: 0
+                    fontSize: '1rem',
+                    color: 'rgba(255,255,255,0.8)',
+                    margin: 0,
+                    fontWeight: '300'
                   }}>
                     2007 • Billboard Latin Music Awards
                   </p>
