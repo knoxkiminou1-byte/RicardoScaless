@@ -73,7 +73,7 @@ function Home() {
               fontWeight: '400',
               transition: 'color 0.3s ease'
             }}>Videos</a>
-            <a href="#contact" style={{
+            <a href="/contact" style={{
               color: 'white',
               textDecoration: 'none',
               fontSize: '16px',
