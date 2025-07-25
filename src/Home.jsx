@@ -315,14 +315,13 @@ function Home() {
             }}>
               <div style={{
                 height: '250px',
-                background: 'linear-gradient(45deg, #C28840, #8B6914)',
+                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/0 0 10 300 dpi for conversion (2023_01_11 05_44_32 UTC)_1753419956252.jpg")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '4rem',
-                color: 'white'
+                justifyContent: 'center'
               }}>
-                🎹
               </div>
               <div style={{
                 padding: '30px'
@@ -353,14 +352,13 @@ function Home() {
             }}>
               <div style={{
                 height: '250px',
-                background: 'linear-gradient(45deg, #8B4513, #CD853F)',
+                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/RS Yoshi 300 dpi_1753419975695.jpg")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '4rem',
-                color: 'white'
+                justifyContent: 'center'
               }}>
-                🎺
               </div>
               <div style={{
                 padding: '30px'
@@ -400,14 +398,13 @@ function Home() {
             }}>
               <div style={{
                 height: '300px',
-                background: 'linear-gradient(45deg, #4A4A4A, #C28840)',
+                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/RS by RKS  300 dpi (1)_1753419950459.jpg")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '5rem',
-                color: 'white'
+                justifyContent: 'center'
               }}>
-                🎭
               </div>
               <div style={{
                 padding: '40px'
