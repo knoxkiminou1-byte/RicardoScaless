@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 function Contact() {
@@ -142,7 +141,7 @@ function Contact() {
               }}>
                 Book Ricardo Scales
               </h2>
-              
+
               <div style={{ marginBottom: '50px' }}>
                 <h3 style={{
                   fontSize: '1.5rem',
@@ -220,13 +219,7 @@ function Contact() {
                   lineHeight: '1.7'
                 }}>
                   <p style={{ margin: '0 0 10px 0' }}>Elite Artist Management</p>
-                  <a href="tel:+1-415-555-0123" style={{
-                    color: '#C28840',
-                    textDecoration: 'none',
-                    fontWeight: '500'
-                  }}>
-                    +1 (415) 555-0123
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -247,7 +240,7 @@ function Contact() {
               }}>
                 Send a Message
               </h3>
-              
+
               <form style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -259,7 +252,8 @@ function Contact() {
                     color: 'rgba(255,255,255,0.9)',
                     marginBottom: '8px',
                     fontSize: '16px',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    fontFamily: "'Playfair Display', serif"
                   }}>
                     Name *
                   </label>
@@ -274,7 +268,7 @@ function Contact() {
                       borderRadius: '6px',
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'inherit'
+                      fontFamily: "'Playfair Display', serif"
                     }}
                   />
                 </div>
@@ -285,7 +279,8 @@ function Contact() {
                     color: 'rgba(255,255,255,0.9)',
                     marginBottom: '8px',
                     fontSize: '16px',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    fontFamily: "'Playfair Display', serif"
                   }}>
                     Email *
                   </label>
@@ -300,7 +295,7 @@ function Contact() {
                       borderRadius: '6px',
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'inherit'
+                      fontFamily: "'Playfair Display', serif"
                     }}
                   />
                 </div>
@@ -311,7 +306,8 @@ function Contact() {
                     color: 'rgba(255,255,255,0.9)',
                     marginBottom: '8px',
                     fontSize: '16px',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    fontFamily: "'Playfair Display', serif"
                   }}>
                     Event Type
                   </label>
@@ -323,7 +319,7 @@ function Contact() {
                     borderRadius: '6px',
                     color: 'white',
                     fontSize: '16px',
-                    fontFamily: 'inherit'
+                    fontFamily: "'Playfair Display', serif"
                   }}>
                     <option value="">Select an option</option>
                     <option value="concert">Concert Performance</option>
@@ -341,7 +337,8 @@ function Contact() {
                     color: 'rgba(255,255,255,0.9)',
                     marginBottom: '8px',
                     fontSize: '16px',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    fontFamily: "'Playfair Display', serif"
                   }}>
                     Message *
                   </label>
@@ -356,7 +353,7 @@ function Contact() {
                       borderRadius: '6px',
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'inherit',
+                      fontFamily: "'Playfair Display', serif",
                       resize: 'vertical'
                     }}
                     placeholder="Please include event date, location, duration, and any specific requirements..."
