@@ -301,7 +301,8 @@ function Home() {
                 backgroundColor: '#2a2a2a',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                borderRadius: '12px 12px 0 0'
               }}>
               </div>
               <div style={{
@@ -340,7 +341,8 @@ function Home() {
                 backgroundColor: '#2a2a2a',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                borderRadius: '12px 12px 0 0'
               }}>
               </div>
               <div style={{
