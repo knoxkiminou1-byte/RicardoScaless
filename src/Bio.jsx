@@ -138,7 +138,8 @@ function Bio() {
       }}>
         <div style={{
           maxWidth: '900px',
-          margin: '0 auto'
+          margin: '0 auto',
+          textAlign: 'center'
         }}>
           {/* Third Stream Music */}
           <div style={{ marginBottom: '60px' }}>
