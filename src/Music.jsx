@@ -97,16 +97,11 @@ function Music() {
             width: '232px',
             height: '232px',
             borderRadius: '50%',
-            backgroundColor: '#282828',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            fontSize: '48px',
+            backgroundImage: 'url("/attached_assets/piano_performance_bw.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             boxShadow: '0 4px 60px rgba(0,0,0,.5)'
-          }}>
-            RS
-          </div>
+          }}></div>
 
           <div>
             <p style={{
@@ -413,14 +408,11 @@ function Music() {
               width: '120px',
               height: '120px',
               borderRadius: '50%',
-              backgroundColor: '#282828',
-              flexShrink: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              fontSize: '48px',
-            }}>RS</div>
+              backgroundImage: 'url("/attached_assets/piano_performance_bw.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              flexShrink: 0
+            }}></div>
 
             <div>
               <p style={{
