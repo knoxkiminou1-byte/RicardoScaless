@@ -250,30 +250,16 @@ function Home() {
           margin: '0 auto',
           width: '100%'
         }}>
-          <h2 style={{
-            fontSize: window.innerWidth <= 768 ? '2rem' : '3rem',
-            fontFamily: "'Playfair Display', serif",
-            fontWeight: '400',
-            lineHeight: '1.2',
-            marginBottom: '40px',
-            color: 'white',
-            textAlign: window.innerWidth <= 768 ? 'left' : 'center'
-          }}>
+          <h2 className="legacy-title">
             A Legacy of Musical Excellence
           </h2>
 
-          <div style={{
-            display: window.innerWidth <= 768 ? 'block' : 'grid',
-            gridTemplateColumns: window.innerWidth <= 768 ? 'none' : '1fr 2fr',
-            gap: window.innerWidth <= 768 ? '0' : '80px'
-          }}>
-            <div style={{
-              marginBottom: window.innerWidth <= 768 ? '30px' : '0'
-            }}>
+          <div className="home-legacy-grid">
+            <div className="legacy-quote">
               <blockquote style={{
                 borderLeft: '4px solid rgba(255,255,255,0.3)',
                 paddingLeft: '20px',
-                fontSize: window.innerWidth <= 768 ? '1rem' : '1.2rem',
+                fontSize: '1.2rem',
                 fontStyle: 'italic',
                 lineHeight: '1.6',
                 marginBottom: '20px',
@@ -286,16 +272,15 @@ function Home() {
                 fontSize: '1rem',
                 color: 'rgba(255,255,255,0.8)',
                 fontStyle: 'normal',
-                display: 'block',
-                marginBottom: window.innerWidth <= 768 ? '30px' : '0'
+                display: 'block'
               }}>
                 — Ricardo Scales
               </cite>
             </div>
 
-            <div>
+            <div className="legacy-text">
               <p style={{
-                fontSize: window.innerWidth <= 768 ? '1rem' : '1.125rem',
+                fontSize: '1.125rem',
                 lineHeight: '1.7',
                 marginBottom: '30px',
                 color: 'rgba(255,255,255,0.95)'
@@ -304,7 +289,7 @@ function Home() {
               </p>
 
               <p style={{
-                fontSize: window.innerWidth <= 768 ? '1rem' : '1.125rem',
+                fontSize: '1.125rem',
                 lineHeight: '1.7',
                 color: 'rgba(255,255,255,0.95)'
               }}>

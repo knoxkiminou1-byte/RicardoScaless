@@ -139,16 +139,27 @@ section {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Mobile Styles */
+/* Legacy Section Styles */
+.legacy-title {
+  fontSize: '3rem';
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: white;
+  text-align: center;
+}
+
+.legacy-quote {
+  margin-bottom: 0;
+}
+
+.legacy-text {
+  /* Default styles already applied inline */
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-
-  .home-header {
-    padding: 12px 0;
-  }
-
-  .home-nav-container {
-    padding: 0 15px;
-  }
 
   .home-logo {
     font-size: 36px;
@@ -162,9 +173,27 @@ section {
     display: block;
   }
 
+  .legacy-title {
+    font-size: 2rem !important;
+    text-align: left !important;
+    margin-bottom: 30px !important;
+  }
+
   .home-legacy-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  .legacy-quote {
+    margin-bottom: 30px !important;
+  }
+
+  .legacy-quote blockquote {
+    font-size: 1rem !important;
+  }
+
+  .legacy-text p {
+    font-size: 1rem !important;
   }
 
   .home-journey-grid {
@@ -194,7 +223,7 @@ section {
   }
 }
 
-/* Legacy Section Mobile Fixes */
+/* Legacy Section Mobile Fixes (retained and potentially modified with new classes) */
 .legacy-section {
   width: 100%;
   max-width: 100%;
