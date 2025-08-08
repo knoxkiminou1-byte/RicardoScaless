@@ -137,7 +137,7 @@ function Home() {
           }}>
             <h1 style={{
               fontSize: 'clamp(1.8rem, 6vw, 4rem)',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
               color: '#C28840',
               marginBottom: '25px',
               fontWeight: '700',
@@ -166,7 +166,7 @@ function Home() {
               textRendering: 'optimizeLegibility',
               WebkitFontSmoothing: 'antialiased',
               MozOsxFontSmoothing: 'grayscale',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
               whiteSpace: 'normal',
               hyphens: 'none',
               WebkitHyphens: 'none'
@@ -365,7 +365,7 @@ function Home() {
               }}>
                 <h3 style={{
                   fontSize: '1.5rem',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Playfair Display', serif",
                   marginBottom: '20px',
                   color: 'white',
                   fontWeight: '600',
@@ -379,7 +379,7 @@ function Home() {
                   fontSize: '1rem',
                   lineHeight: '1.6',
                   color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   textRendering: 'optimizeLegibility',
                   WebkitFontSmoothing: 'antialiased',
                   MozOsxFontSmoothing: 'grayscale',
@@ -415,7 +415,7 @@ function Home() {
               }}>
                 <h3 style={{
                   fontSize: '1.5rem',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Playfair Display', serif",
                   marginBottom: '20px',
                   color: 'white',
                   fontWeight: '600',
@@ -429,7 +429,7 @@ function Home() {
                   fontSize: '1rem',
                   lineHeight: '1.6',
                   color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   textRendering: 'optimizeLegibility',
                   WebkitFontSmoothing: 'antialiased',
                   MozOsxFontSmoothing: 'grayscale',
@@ -465,7 +465,7 @@ function Home() {
               }}>
                 <h3 style={{
                   fontSize: '1.5rem',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Playfair Display', serif",
                   marginBottom: '20px',
                   color: 'white',
                   fontWeight: '600',
@@ -479,7 +479,7 @@ function Home() {
                   fontSize: '1rem',
                   lineHeight: '1.6',
                   color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   textRendering: 'optimizeLegibility',
                   WebkitFontSmoothing: 'antialiased',
                   MozOsxFontSmoothing: 'grayscale',
