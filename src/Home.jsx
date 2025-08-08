@@ -70,8 +70,8 @@ function Home() {
 
           {/* Mobile Menu Button */}
           <button
+            className="mobile-menu-btn"
             style={{
-              display: 'none',
               background: 'none',
               border: 'none',
               color: '#C28840',
