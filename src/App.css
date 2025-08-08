@@ -132,6 +132,15 @@ section {
   color: white;
   font-size: 24px;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-btn:hover,
+.home-mobile-menu-btn:hover,
+.music-mobile-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile Responsive Styles */
@@ -156,9 +165,14 @@ section {
     font-size: 24px !important;
   }
 
-  /* Adjust padding */
-  section {
-    padding: 80px 15px 40px 15px !important;
+  /* Hero section mobile adjustments */
+  section:first-of-type {
+    padding: 100px 15px 40px 15px !important;
+  }
+
+  /* Other sections mobile adjustments */
+  section:not(:first-of-type) {
+    padding: 60px 15px 40px 15px !important;
   }
 
   /* Legacy grid mobile layout */
@@ -173,6 +187,25 @@ section {
 
   .legacy-blockquote {
     font-size: 1.1rem;
+  }
+
+  /* Hero text adjustments */
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem) !important;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
+  }
+
+  /* Button adjustments */
+  a[style*="padding"] {
+    padding: 12px 24px !important;
+    font-size: 14px !important;
   }
 }
 

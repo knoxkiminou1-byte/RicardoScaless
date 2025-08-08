@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ function Home() {
           <div className="home-logo">
             <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="home-desktop-nav">
             <Link to="/" style={{
@@ -239,10 +238,10 @@ function Home() {
           margin: '0 auto'
         }}>
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px'
-          }}>
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '30px'
+            }}>
             {/* Card 1: The Hand That Wouldn't Quit */}
             <div style={{
               backgroundColor: '#1a1a1a',
