@@ -281,20 +281,6 @@ section {
     display: block !important;
   }
 
-  /* Typography */
-  h1 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
-  }
-
-  h2 {
-    font-size: clamp(1.3rem, 5vw, 2rem) !important;
-  }
-
-  p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-  }
-
   /* Contact page mobile changes only */
   .contact-grid {
     grid-template-columns: 1fr !important;
@@ -327,9 +313,5 @@ section {
 
   section {
     padding: 80px 10px 30px 10px !important;
-  }
-
-  h1 {
-    font-size: clamp(1.2rem, 7vw, 2rem) !important;
   }
 }
