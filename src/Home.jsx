@@ -256,7 +256,13 @@ function Home() {
             A Legacy of Musical Excellence
           </h2>
 
-          <div className="home-legacy-grid">
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '30px',
+            maxWidth: '100%',
+            width: '100%'
+          }}>
             <div className="legacy-quote">
               <blockquote className="legacy-blockquote">
                 "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
