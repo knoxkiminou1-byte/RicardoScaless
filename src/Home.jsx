@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,26 +13,10 @@ function Home() {
       fontFamily: "'Playfair Display', serif"
     }}>
       {/* Navigation Header */}
-      <header style={{
-        position: 'fixed',
-        top: 0,
-        width: '100%',
-        backgroundColor: 'rgba(0,0,0,0.9)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(194, 136, 64, 0.2)',
-        zIndex: 1000,
-        padding: '20px 0'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 20px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
+      <header className="home-header">
+        <div className="home-nav-container">
           <div className="home-logo">
-            <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</a>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -119,393 +104,291 @@ function Home() {
       {/* Hero Section */}
       <section style={{
         minHeight: '100vh',
-        background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("/attached_assets/476309616_1144645414332615_8348618865407374253_n_1753392146607.jpg")',
+        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("/attached_assets/Untitled design (50).png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
         alignItems: 'center',
-        padding: '100px 15px 60px',
-        position: 'relative'
+        justifyContent: 'center',
+        padding: '100px 15px 0',
+        textAlign: 'center'
       }}>
         <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
+          maxWidth: '900px',
           width: '100%'
         }}>
-          <div style={{
-            maxWidth: '800px'
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 8vw, 6rem)',
+            fontFamily: "'Playfair Display', serif",
+            color: '#C28840',
+            marginBottom: '20px',
+            fontWeight: '400',
+            lineHeight: '1.1'
           }}>
-            <h1 style={{
-              fontSize: 'clamp(1.2rem, 8vw, 2.5rem)',
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
-              color: '#C28840',
-              marginBottom: '25px',
-              fontWeight: '700',
-              lineHeight: '1.2',
-              letterSpacing: '0',
-              wordBreak: 'normal',
-              overflowWrap: 'break-word',
-              textRendering: 'optimizeLegibility',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
-              whiteSpace: 'normal',
-              hyphens: 'auto',
-              WebkitHyphens: 'auto',
-              maxWidth: '100%',
-              width: '100%'
-            }}>
-              Ricardo Scales: Composer, Civic Virtuoso, Cultural Pillar
-            </h1>
-
-            <p style={{
-              fontSize: 'clamp(1rem, 3vw, 1.125rem)',
-              color: 'rgba(255,255,255,0.9)',
-              marginBottom: '35px',
-              lineHeight: '1.6',
-              maxWidth: '100%',
-              wordBreak: 'keep-all',
-              overflowWrap: 'normal',
-              textRendering: 'optimizeLegibility',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
-              fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
-              whiteSpace: 'normal',
-              hyphens: 'none',
-              WebkitHyphens: 'none'
-            }}>
-              Experience the timeless artistry of Ricardo Scales, whose musical genius transcends genres and transforms spaces.
-              His compositions blend classical precision with jazz improvisation, creating unforgettable musical journeys that
-              captivate audiences worldwide.
-            </p>
-
-            <div className="button-container" style={{
-              display: 'flex',
-              gap: '20px',
-              flexWrap: 'wrap'
-            }}>
-              <button style={{
-                backgroundColor: 'transparent',
-                color: 'white',
-                border: '2px solid white',
-                padding: '15px 30px',
-                fontSize: '16px',
-                fontWeight: '500',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                fontFamily: 'inherit'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = 'white';
-                e.target.style.color = 'black';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = 'white';
-              }}>
-                Book an Event
-              </button>
-
-              <button style={{
-                backgroundColor: 'transparent',
-                color: '#C28840',
-                border: '2px solid #C28840',
-                padding: '15px 30px',
-                fontSize: '16px',
-                fontWeight: '500',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                fontFamily: 'inherit'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#C28840';
-                e.target.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#C28840';
-              }}>
-                Explore Music
-              </button>
-            </div>
+            Ricardo Scales
+          </h1>
+          <div style={{
+            fontSize: 'clamp(1rem, 4vw, 1.5rem)',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '30px',
+            fontStyle: 'italic'
+          }}>
+            "The Black Liberace" • "The Black Prince"
           </div>
-        </div>
-
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'radial-gradient(circle at 70% 30%, rgba(194, 136, 64, 0.1) 0%, transparent 50%)',
-          pointerEvents: 'none'
-        }}></div>
-      </section>
-
-      {/* Legacy Section */}
-      <section style={{
-        backgroundColor: '#C28840',
-        padding: '40px 40px 80px',
-        color: 'white'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          width: '100%'
-        }}>
-          <h2 className="legacy-title">
-            A Legacy of Musical Excellence
-          </h2>
-
+          <div style={{
+            fontSize: 'clamp(0.9rem, 2.5vw, 1.25rem)',
+            color: '#C28840',
+            fontWeight: '500',
+            letterSpacing: '1px',
+            marginBottom: '40px'
+          }}>
+            PIANIST • COMPOSER • CULTURAL AMBASSADOR
+          </div>
+          
+          {/* Hero Buttons */}
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
-            gap: '30px',
-            maxWidth: '100%',
-            width: '100%'
+            gap: '20px',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
           }}>
-            <div className="legacy-quote">
-              <blockquote className="legacy-blockquote">
-                "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
-              </blockquote>
-
-              <cite className="legacy-cite">
-                — Ricardo Scales
-              </cite>
-            </div>
-
-            <div className="legacy-text">
-              <p className="legacy-paragraph">
-                For over three decades, Ricardo Scales has been an influential force in the music world, seamlessly blending jazz, gospel, and classical traditions. As a civic virtuoso, he has dedicated his talents to cultural enrichment, performing at prestigious venues while maintaining deep community connections.
-              </p>
-
-              <p className="legacy-paragraph">
-                His work transcends entertainment—it preserves cultural heritage while pushing artistic boundaries. Ricardo's compositions have scored civic celebrations, historical commemorations, and intimate gatherings, each performance infused with his signature sophistication and emotional depth.
-              </p>
-            </div>
+            <Link to="/music" style={{
+              backgroundColor: '#C28840',
+              color: 'white',
+              padding: '15px 30px',
+              textDecoration: 'none',
+              fontSize: 'clamp(14px, 3vw, 16px)',
+              fontWeight: '500',
+              borderRadius: '5px',
+              transition: 'all 0.3s ease',
+              minWidth: '120px',
+              textAlign: 'center'
+            }}>
+              Listen Now
+            </Link>
+            <Link to="/contact" style={{
+              backgroundColor: 'transparent',
+              color: 'white',
+              border: '2px solid white',
+              padding: '15px 30px',
+              textDecoration: 'none',
+              fontSize: 'clamp(14px, 3vw, 16px)',
+              fontWeight: '500',
+              borderRadius: '5px',
+              transition: 'all 0.3s ease',
+              minWidth: '120px',
+              textAlign: 'center'
+            }}>
+              Book Event
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Musical Journey Section */}
       <section style={{
-        backgroundColor: '#1a1a1a',
-        padding: '100px 20px',
-        color: 'white'
+        backgroundColor: '#000000',
+        padding: '60px 15px'
       }}>
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
           <h2 style={{
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(2rem, 6vw, 3.5rem)',
             fontFamily: "'Playfair Display', serif",
             color: '#C28840',
             textAlign: 'center',
-            marginBottom: '60px',
+            marginBottom: '20px',
             fontWeight: '400'
           }}>
-            Musical Journey
+            A Musical Journey
           </h2>
-
-          <div className="home-journey-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '40px',
-            alignItems: 'start',
-            padding: 'inherit',
-            margin: 'inherit'
+          <p style={{
+            fontSize: 'clamp(1rem, 3vw, 1.2rem)',
+            textAlign: 'center',
+            color: 'rgba(255,255,255,0.8)',
+            marginBottom: '50px',
+            lineHeight: '1.6'
           }}>
+            Four decades of musical excellence, cultural impact, and artistic innovation
+          </p>
+
+          {/* Cards Grid - Mobile Optimized */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '30px',
+            width: '100%'
+          }}>
+            {/* Card 1 */}
             <div style={{
-              backgroundColor: '#2a2a2a',
+              backgroundColor: '#1a1a1a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease'
+              border: '1px solid rgba(194, 136, 64, 0.2)'
             }}>
-              <div style={{
-                height: '250px',
-                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/0 0 10 300 dpi for conversion (2023_01_11 05_44_32 UTC)_1753419956252.jpg")',
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundColor: '#2a2a2a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '12px 12px 0 0'
-              }}>
-              </div>
-              <div style={{
-                padding: '30px'
-              }}>
+              <img 
+                src="/attached_assets/IMG_5832_1754679855455.png" 
+                alt="Early Virtuoso" 
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover'
+                }}
+              />
+              <div style={{ padding: '25px' }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: '20px',
-                  color: 'white',
-                  fontWeight: '600',
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale'
+                  fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
+                  color: '#C28840',
+                  marginBottom: '15px',
+                  fontWeight: '500'
                 }}>
-                  Early Beginnings
+                  Early Virtuoso (1980s)
                 </h3>
                 <p style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "'Inter', sans-serif",
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale',
-                  wordBreak: 'keep-all',
-                  overflowWrap: 'normal'
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
+                  color: 'rgba(255,255,255,0.9)',
+                  lineHeight: '1.6'
                 }}>
-                  Ricardo's musical journey began at age five, studying classical piano before discovering his passion for jazz improvisation. His formative years were marked by rigorous training and mentorship from legendary performers.
+                  Rising from conservatory training to overcome a career-threatening hand injury at 19, Ricardo's determination and talent quickly established him as a formidable pianist in the competitive San Francisco music scene.
                 </p>
               </div>
             </div>
 
+            {/* Card 2 */}
             <div style={{
-              backgroundColor: '#2a2a2a',
+              backgroundColor: '#1a1a1a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease'
+              border: '1px solid rgba(194, 136, 64, 0.2)'
             }}>
-              <div style={{
-                height: '250px',
-                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/RS Yoshi 300 dpi_1753419975695.jpg")',
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundColor: '#2a2a2a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '12px 12px 0 0'
-              }}>
-              </div>
-              <div style={{
-                padding: '30px'
-              }}>
+              <img 
+                src="/attached_assets/IMG_5833_1754679855455.png" 
+                alt="Third Stream Pioneer" 
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover'
+                }}
+              />
+              <div style={{ padding: '25px' }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: '20px',
-                  color: 'white',
-                  fontWeight: '600',
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale'
+                  fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
+                  color: '#C28840',
+                  marginBottom: '15px',
+                  fontWeight: '500'
                 }}>
-                  Rise to Prominence
+                  Third Stream Pioneer (1990s)
                 </h3>
                 <p style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "'Inter', sans-serif",
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale',
-                  wordBreak: 'keep-all',
-                  overflowWrap: 'normal'
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
+                  color: 'rgba(255,255,255,0.9)',
+                  lineHeight: '1.6'
                 }}>
                   Throughout the 1990s, Ricardo established himself as a distinctive voice in contemporary jazz, releasing acclaimed albums and collaborating with industry luminaries while developing his characteristic fusion style.
                 </p>
               </div>
             </div>
 
+            {/* Card 3 */}
             <div style={{
-              backgroundColor: '#2a2a2a',
+              backgroundColor: '#1a1a1a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease'
+              border: '1px solid rgba(194, 136, 64, 0.2)'
             }}>
-              <div style={{
-                height: '250px',
-                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/RS by RKS  300 dpi (1)_1753419950459.jpg")',
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundColor: '#2a2a2a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '12px 12px 0 0'
-              }}>
-              </div>
-              <div style={{
-                padding: '30px'
-              }}>
+              <img 
+                src="/attached_assets/IMG_5834_1754679855454.png" 
+                alt="Cultural Ambassador" 
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover'
+                }}
+              />
+              <div style={{ padding: '25px' }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: '20px',
-                  color: 'white',
-                  fontWeight: '600'
+                  fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
+                  color: '#C28840',
+                  marginBottom: '15px',
+                  fontWeight: '500'
                 }}>
-                  Cultural Leadership
+                  Cultural Ambassador (2000s)
                 </h3>
                 <p style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                   color: 'rgba(255,255,255,0.9)',
-                  margin: '0',
-                  fontFamily: "'Inter', sans-serif"
+                  lineHeight: '1.6'
                 }}>
-                  Today, Ricardo stands as a cultural pillar, balancing international performances with music education initiatives and civic engagement projects that bring artistic excellence to diverse communities. His leadership extends beyond the stage, fostering the next generation of musicians while preserving the rich traditions that define our cultural heritage.
+                  The new millennium brought international recognition as Ricardo performed for U.S. Presidents and global leaders, cementing his role as America's musical ambassador to the world.
                 </p>
               </div>
             </div>
 
+            {/* Card 4 */}
             <div style={{
-              backgroundColor: '#2a2a2a',
+              backgroundColor: '#1a1a1a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease'
+              border: '1px solid rgba(194, 136, 64, 0.2)'
             }}>
-              <div style={{
-                height: '250px',
-                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/476309616_1144645414332615_8348618865407374253_n_1753392146607.jpg")',
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundColor: '#2a2a2a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '12px 12px 0 0'
-              }}>
-              </div>
-              <div style={{
-                padding: '30px'
-              }}>
+              <img 
+                src="/attached_assets/IMG_5837_1754679855454.png" 
+                alt="Living Legend" 
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover'
+                }}
+              />
+              <div style={{ padding: '25px' }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: '20px',
-                  color: 'white',
-                  fontWeight: '600',
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale'
+                  fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
+                  color: '#C28840',
+                  marginBottom: '15px',
+                  fontWeight: '500'
                 }}>
-                  Legacy Continues
+                  Living Legend (2010s-Present)
                 </h3>
                 <p style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.8)',
-                  fontFamily: "'Inter', sans-serif",
-                  textRendering: 'optimizeLegibility',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale',
-                  wordBreak: 'keep-all',
-                  overflowWrap: 'normal'
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
+                  color: 'rgba(255,255,255,0.9)',
+                  lineHeight: '1.6'
                 }}>
-                  As a composer, civic virtuoso, and cultural pillar, Ricardo's influence resonates through every performance, every student mentored, and every community touched by his artistry. His dedication to musical excellence continues to inspire new generations of artists and audiences alike.
+                  Today, Ricardo continues to innovate and inspire, recently saving the Fillmore Jazz Festival and maintaining his position as San Francisco's most beloved cultural figure and musical treasure.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legacy Section */}
+      <section style={{
+        backgroundColor: '#111111',
+        padding: '60px 15px'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <div className="home-legacy-grid">
+            <div>
+              <blockquote className="legacy-blockquote">
+                "I've dedicated my life to breaking down barriers through music. When they said a young Black pianist from San Francisco couldn't make it in the classical world, I proved them wrong. When they said my career was over after my hand injury, I came back stronger. Music isn't just what I do—it's who I am, and it's the bridge that connects us all."
+              </blockquote>
+              <cite className="legacy-cite">— Ricardo Scales</cite>
+            </div>
+            
+            <div>
+              <h2 className="legacy-title">A Legacy of Excellence</h2>
+              <p className="legacy-paragraph">
+                For over four decades, Ricardo Scales has redefined what it means to be a pianist in America. From his early days overcoming a devastating hand injury to becoming San Francisco's most celebrated cultural ambassador, his journey embodies the power of perseverance and artistic vision.
+              </p>
+              <p className="legacy-paragraph">
+                His performances for U.S. Presidents, collaborations with international superstars, and recent heroic efforts to save the Fillmore Jazz Festival demonstrate that true artistry extends far beyond the concert hall—it builds communities and preserves culture for future generations.
+              </p>
             </div>
           </div>
         </div>
@@ -513,9 +396,9 @@ function Home() {
 
       {/* Footer */}
       <footer style={{
-        backgroundColor: '#0a0a0a',
+        backgroundColor: '#000000',
         borderTop: '1px solid rgba(194, 136, 64, 0.2)',
-        padding: '60px 20px 40px',
+        padding: '40px 15px',
         color: 'white'
       }}>
         <div style={{
@@ -524,11 +407,10 @@ function Home() {
           textAlign: 'center'
         }}>
           <div style={{
-            fontSize: '36px',
+            fontSize: 'clamp(24px, 6vw, 36px)',
             fontFamily: "'Alex Brush', cursive",
             color: '#C28840',
-            marginBottom: '30px',
-            textShadow: '0 4px 8px rgba(194, 136, 64, 0.3)'
+            marginBottom: '20px'
           }}>
             Ricardo Scales
           </div>
@@ -536,39 +418,28 @@ function Home() {
           <div style={{
             height: '1px',
             background: 'linear-gradient(to right, transparent, rgba(194, 136, 64, 0.3), transparent)',
-            margin: '30px 0',
-            maxWidth: '400px',
-            marginLeft: 'auto',
-            marginRight: 'auto'
+            margin: '20px auto',
+            maxWidth: '300px'
           }}></div>
 
           <div style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '40px',
+            gap: '20px',
             flexWrap: 'wrap',
-            fontSize: '14px',
+            fontSize: 'clamp(12px, 2.5vw, 14px)',
             color: 'rgba(255,255,255,0.7)'
           }}>
-            <p style={{
-              margin: 0,
-              fontFamily: "'Playfair Display', serif"
-            }}>
+            <p style={{ margin: 0 }}>
               © 2025 Ricardo Scales. All rights reserved.
             </p>
-
             <div style={{
-              height: '20px',
+              height: '15px',
               width: '1px',
               backgroundColor: 'rgba(194, 136, 64, 0.3)'
             }}></div>
-
-            <p style={{
-              margin: 0,
-              fontFamily: "'Playfair Display', serif",
-              fontStyle: 'italic'
-            }}>
+            <p style={{ margin: 0, fontStyle: 'italic' }}>
               Designed by <span style={{ color: '#C28840' }}>Marchitechs</span>
             </p>
           </div>
