@@ -242,75 +242,140 @@ function Home() {
       {/* Legacy Section */}
       <section style={{
         backgroundColor: '#C28840',
-        padding: '100px 20px',
+        padding: window.innerWidth <= 768 ? '60px 20px' : '100px 20px',
         color: 'white'
       }}>
-        <div className="home-legacy-grid" style={{
+        <div style={{
           maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr 2fr',
-          gap: '80px',
-          alignItems: 'center'
+          margin: '0 auto'
         }}>
-          <div>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: '400',
-              lineHeight: '1.3',
-              marginBottom: '40px',
-              color: 'white'
-            }}>
-              A Legacy of Musical Excellence
-            </h2>
+          {window.innerWidth <= 768 ? (
+            // Mobile layout - single column
+            <div style={{ textAlign: 'left' }}>
+              <h2 style={{
+                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: '400',
+                lineHeight: '1.2',
+                marginBottom: '30px',
+                color: 'white',
+                textAlign: 'left'
+              }}>
+                A Legacy of Musical Excellence
+              </h2>
 
-            <blockquote style={{
-              borderLeft: '4px solid rgba(255,255,255,0.3)',
-              paddingLeft: '30px',
-              fontSize: '1.125rem',
-              fontStyle: 'italic',
-              lineHeight: '1.6',
-              marginBottom: '20px',
-              color: 'rgba(255,255,255,0.95)',
-              margin: '0 0 20px 0'
-            }}>
-              "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
-            </blockquote>
+              <blockquote style={{
+                borderLeft: '4px solid rgba(255,255,255,0.3)',
+                paddingLeft: '20px',
+                fontSize: '1rem',
+                fontStyle: 'italic',
+                lineHeight: '1.5',
+                marginBottom: '15px',
+                color: 'rgba(255,255,255,0.95)',
+                margin: '0 0 15px 0',
+                textAlign: 'left'
+              }}>
+                "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
+              </blockquote>
 
-            <cite style={{
-              fontSize: '1rem',
-              color: 'rgba(255,255,255,0.8)',
-              fontStyle: 'normal'
-            }}>
-              — Ricardo Scales
-            </cite>
-          </div>
+              <cite style={{
+                fontSize: '0.9rem',
+                color: 'rgba(255,255,255,0.8)',
+                fontStyle: 'normal',
+                display: 'block',
+                marginBottom: '30px',
+                textAlign: 'left'
+              }}>
+                — Ricardo Scales
+              </cite>
 
-          <div>
-            <p style={{
-              fontSize: '1.125rem',
-              lineHeight: '1.7',
-              marginBottom: '30px',
-              color: 'rgba(255,255,255,0.95)'
-            }}>
-              For over three decades, Ricardo Scales has been an influential force in the music world,
-              seamlessly blending jazz, gospel, and classical traditions. As a civic virtuoso, he has
-              dedicated his talents to cultural enrichment, performing at prestigious venues while
-              maintaining deep community connections.
-            </p>
+              <p style={{
+                fontSize: '1rem',
+                lineHeight: '1.6',
+                marginBottom: '20px',
+                color: 'rgba(255,255,255,0.95)',
+                textAlign: 'left'
+              }}>
+                For over three decades, Ricardo Scales has been an influential force in the music world, seamlessly blending jazz, gospel, and classical traditions. As a civic virtuoso, he has dedicated his talents to cultural enrichment, performing at prestigious venues while maintaining deep community connections.
+              </p>
 
-            <p style={{
-              fontSize: '1.125rem',
-              lineHeight: '1.7',
-              color: 'rgba(255,255,255,0.95)'
+              <p style={{
+                fontSize: '1rem',
+                lineHeight: '1.6',
+                color: 'rgba(255,255,255,0.95)',
+                textAlign: 'left'
+              }}>
+                His work transcends entertainment—it preserves cultural heritage while pushing artistic boundaries. Ricardo's compositions have scored civic celebrations, historical commemorations, and intimate gatherings, each performance infused with his signature sophistication and emotional depth.
+              </p>
+            </div>
+          ) : (
+            // Desktop layout - two columns
+            <div className="home-legacy-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 2fr',
+              gap: '80px',
+              alignItems: 'center'
             }}>
-              His work transcends entertainment—it preserves cultural heritage while pushing
-              artistic boundaries. Ricardo's compositions have scored civic celebrations, historical
-              commemorations, and intimate gatherings, each performance infused with his
-              signature sophistication and emotional depth.
-            </p>
-          </div>
+              <div>
+                <h2 style={{
+                  fontSize: 'clamp(2rem, 4vw, 3rem)',
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: '400',
+                  lineHeight: '1.3',
+                  marginBottom: '40px',
+                  color: 'white'
+                }}>
+                  A Legacy of Musical Excellence
+                </h2>
+
+                <blockquote style={{
+                  borderLeft: '4px solid rgba(255,255,255,0.3)',
+                  paddingLeft: '30px',
+                  fontSize: '1.125rem',
+                  fontStyle: 'italic',
+                  lineHeight: '1.6',
+                  marginBottom: '20px',
+                  color: 'rgba(255,255,255,0.95)',
+                  margin: '0 0 20px 0'
+                }}>
+                  "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
+                </blockquote>
+
+                <cite style={{
+                  fontSize: '1rem',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontStyle: 'normal'
+                }}>
+                  — Ricardo Scales
+                </cite>
+              </div>
+
+              <div>
+                <p style={{
+                  fontSize: '1.125rem',
+                  lineHeight: '1.7',
+                  marginBottom: '30px',
+                  color: 'rgba(255,255,255,0.95)'
+                }}>
+                  For over three decades, Ricardo Scales has been an influential force in the music world,
+                  seamlessly blending jazz, gospel, and classical traditions. As a civic virtuoso, he has
+                  dedicated his talents to cultural enrichment, performing at prestigious venues while
+                  maintaining deep community connections.
+                </p>
+
+                <p style={{
+                  fontSize: '1.125rem',
+                  lineHeight: '1.7',
+                  color: 'rgba(255,255,255,0.95)'
+                }}>
+                  His work transcends entertainment—it preserves cultural heritage while pushing
+                  artistic boundaries. Ricardo's compositions have scored civic celebrations, historical
+                  commemorations, and intimate gatherings, each performance infused with his
+                  signature sophistication and emotional depth.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
