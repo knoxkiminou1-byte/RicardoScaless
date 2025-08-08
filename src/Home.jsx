@@ -111,24 +111,22 @@ function Home() {
           padding: '0 20px'
         }}>
           <h1 style={{
-            fontSize: 'clamp(4rem, 10vw, 8rem)',
+            fontSize: 'clamp(3rem, 8vw, 6rem)',
             fontFamily: "'Playfair Display', serif",
-            marginBottom: '30px',
-            fontWeight: '700',
-            lineHeight: '1',
-            textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+            marginBottom: '20px',
+            fontWeight: '400',
+            lineHeight: '1.1'
           }}>
             Ricardo Scales
           </h1>
           <h2 style={{
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
             fontFamily: "'Playfair Display', serif",
             color: '#C28840',
-            marginBottom: '40px',
-            fontWeight: '400',
-            fontStyle: 'italic'
+            marginBottom: '30px',
+            fontWeight: '400'
           }}>
-            "The Black Liberace"
+            Composer, Civic Virtuoso, Cultural Pillar
           </h2>
           <p style={{
             fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
