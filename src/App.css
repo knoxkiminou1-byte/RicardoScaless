@@ -37,7 +37,7 @@ section {
   animation: fadeIn 1s ease-out;
 }
 
-/* Home Page Mobile Responsive Styles */
+/* Home Page Base Styles */
 .home-header {
   position: fixed;
   top: 0;
@@ -182,102 +182,12 @@ section {
   margin-bottom: 0;
 }
 
-/* Mobile responsive fixes */
-@media (max-width: 768px) {
-  /* Base container and text handling */
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Navigation fixes */
-  .home-nav-container {
-    padding: 0 15px;
-  }
-
-  .home-logo {
-    font-size: 28px;
-  }
-
-  .home-desktop-nav {
-    display: none;
-  }
-
-  .home-mobile-menu-btn {
-    display: block;
-  }
-
-  /* Section spacing */
-  section {
-    padding: 80px 15px 40px 15px;
-    width: 100%;
-  }
-
-  /* Grid layouts */
-  .home-legacy-grid {
-    display: block;
-  }
-
-  .home-journey-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .home-cultural-card {
-    display: block;
-  }
-
-  /* Typography */
-  h1 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
-  }
-
-  h2 {
-    font-size: clamp(1.3rem, 5vw, 2rem);
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-logo {
-    font-size: 24px;
-  }
-
-  .home-nav-container {
-    padding: 0 10px;
-  }
-
-  section {
-    padding: 80px 10px 30px 10px;
-  }
-
-  h1 {
-    font-size: clamp(1.2rem, 7vw, 2rem) !important;
-  }
-}
-
-
-
 /* Contact Page Styles */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: start;
-}
-
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 }
 
 /* Music Page Styles */
@@ -321,7 +231,76 @@ section {
   padding: 0 20px;
 }
 
+/* ===== MOBILE RESPONSIVE STYLES ONLY ===== */
+
 @media (max-width: 768px) {
+  /* Basic container and text handling */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Navigation mobile changes only */
+  .home-logo {
+    font-size: 28px;
+  }
+
+  .home-nav-container {
+    padding: 0 15px;
+  }
+
+  .home-desktop-nav {
+    display: none;
+  }
+
+  .home-mobile-menu-btn {
+    display: block;
+  }
+
+  /* Section spacing */
+  section {
+    padding: 80px 15px 40px 15px;
+    width: 100%;
+  }
+
+  /* Grid layouts mobile changes only */
+  .home-legacy-grid {
+    display: block;
+  }
+
+  .home-journey-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-cultural-card {
+    display: block;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Contact page mobile changes only */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Music page mobile changes only */
   .music-logo {
     font-size: 24px;
   }
@@ -332,5 +311,24 @@ section {
 
   .music-mobile-menu-btn {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller mobile adjustments only */
+  .home-logo {
+    font-size: 24px;
+  }
+
+  .home-nav-container {
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 80px 10px 30px 10px;
+  }
+
+  h1 {
+    font-size: clamp(1.2rem, 7vw, 2rem) !important;
   }
 }
