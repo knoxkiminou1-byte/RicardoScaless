@@ -50,7 +50,7 @@ section {
   }
   
   /* Hide desktop navigation */
-  header nav {
+  header nav:first-of-type {
     display: none !important;
   }
   
