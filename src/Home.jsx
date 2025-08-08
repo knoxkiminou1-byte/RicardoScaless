@@ -155,7 +155,7 @@ function Home() {
             marginBottom: '30px',
             fontStyle: 'italic'
           }}>
-            "The Black Liberace" • "The Black Prince"
+            Pianist • Composer • Cultural Ambassador
           </div>
           <div style={{
             fontSize: 'clamp(1rem, 3vw, 1.3rem)',
@@ -164,7 +164,7 @@ function Home() {
             letterSpacing: '2px',
             marginBottom: '40px'
           }}>
-            PIANIST • COMPOSER • CULTURAL AMBASSADOR
+            "The Black Liberace" • "The Black Prince"
           </div>
           
           <div style={{
