@@ -137,17 +137,9 @@ function Home() {
           }}>
             <h1 style={{
               fontSize: 'clamp(1.8rem, 6vw, 4rem)',
-              fontFamily: 'Georgia, serif',
               color: '#C28840',
               marginBottom: '25px',
-              fontWeight: '400',
-              lineHeight: '1.3',
-              letterSpacing: '-0.02em',
-              wordBreak: 'normal',
-              overflowWrap: 'break-word',
-              textRendering: 'auto',
-              WebkitFontSmoothing: 'auto',
-              MozOsxFontSmoothing: 'auto'
+              lineHeight: '1.3'
             }}>
               Ricardo Scales: Composer, Civic Virtuoso, Cultural Pillar
             </h1>
@@ -156,14 +148,7 @@ function Home() {
               fontSize: 'clamp(1rem, 3vw, 1.125rem)',
               color: 'rgba(255,255,255,0.9)',
               marginBottom: '35px',
-              lineHeight: '1.7',
-              maxWidth: '100%',
-              wordBreak: 'normal',
-              overflowWrap: 'break-word',
-              textRendering: 'auto',
-              WebkitFontSmoothing: 'auto',
-              MozOsxFontSmoothing: 'auto',
-              fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif'
+              lineHeight: '1.7'
             }}>
               Experience the timeless artistry of Ricardo Scales, whose musical genius transcends genres and transforms spaces. 
               His compositions blend classical precision with jazz improvisation, creating unforgettable musical journeys that 
