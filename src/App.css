@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Allura:wght@400&family=Arizonia&family=Alex+Brush&display=swap');
 
 /* Base Styles */
@@ -25,6 +26,33 @@ nav a:hover {
   color: #C28840 !important;
 }
 
+/* Legacy Section Grid Layout */
+.home-legacy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.legacy-quote {
+  padding: 40px;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 12px;
+  border-left: 4px solid #C28840;
+}
+
+.legacy-blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.legacy-text {
+  padding: 20px 0;
+}
+
 /* Fade in animations */
 @keyframes fadeIn {
   from {
@@ -41,10 +69,19 @@ section {
   animation: fadeIn 1s ease-out;
 }
 
+/* Mobile Menu Button - Hidden by default */
+.mobile-menu-btn,
+.home-mobile-menu-btn,
+.music-mobile-menu-btn {
+  display: none;
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   /* Show mobile menu button */
-  .mobile-menu-btn {
+  .mobile-menu-btn,
+  .home-mobile-menu-btn,
+  .music-mobile-menu-btn {
     display: block !important;
   }
 
@@ -63,9 +100,18 @@ section {
     padding: 80px 15px 40px 15px !important;
   }
 
-  /* Fix grid layouts */
-  div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
+  /* Legacy grid mobile layout */
+  .home-legacy-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .legacy-quote {
+    padding: 30px 20px;
+  }
+
+  .legacy-blockquote {
+    font-size: 1.1rem;
   }
 }
 
@@ -76,5 +122,13 @@ section {
 
   section {
     padding: 80px 10px 30px 10px !important;
+  }
+
+  .legacy-quote {
+    padding: 25px 15px;
+  }
+
+  .legacy-blockquote {
+    font-size: 1rem;
   }
 }

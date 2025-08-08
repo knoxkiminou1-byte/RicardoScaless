@@ -265,26 +265,20 @@ function Home() {
             A Legacy of Excellence
           </h2>
 
-          <blockquote style={{
-            fontSize: 'clamp(1.1rem, 3vw, 1.3rem)',
-            fontStyle: 'italic',
-            color: 'rgba(255,255,255,0.9)',
-            lineHeight: '1.8',
-            marginBottom: '30px',
-            borderLeft: '4px solid #C28840',
-            paddingLeft: '30px',
-            textAlign: 'left'
-          }}>
-            "I've dedicated my life to breaking down barriers through music. When they said a young Black pianist couldn't make it in the classical world, I proved them wrong. Music isn't just what I do—it's who I am."
-          </blockquote>
-
-          <cite style={{
-            fontSize: '1.1rem',
-            color: '#C28840',
-            fontWeight: '500'
-          }}>
-            — Ricardo Scales
-          </cite>
+          <div className="home-legacy-grid">
+            <div className="legacy-quote">
+              <blockquote className="legacy-blockquote">
+                "Music is what I do; it's who I am. Each note carries the story of our collective journey, the rhythm of our shared humanity."
+              </blockquote>
+              <cite style={{
+                fontSize: '1.1rem',
+                color: '#C28840',
+                fontWeight: '500'
+              }}>
+                — Ricardo Scales
+              </cite>
+            </div>
+          </div>
         </div>
       </section>
 
