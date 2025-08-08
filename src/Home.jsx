@@ -30,25 +30,12 @@ function Home() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <div style={{
-            fontSize: window.innerWidth <= 768 ? '28px' : '52px',
-            fontFamily: "'Alex Brush', cursive",
-            color: '#C28840',
-            fontWeight: '400',
-            letterSpacing: '2px',
-            textShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(194, 136, 64, 0.6), 0 0 20px rgba(194, 136, 64, 0.3)',
-            transform: 'rotate(-1deg)',
-            position: 'relative',
-            filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7))'
-          }}>
+          <div className="home-logo">
             <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav style={{
-            display: window.innerWidth <= 768 ? 'none' : 'flex',
-            gap: '35px'
-          }}>
+          <nav className="home-desktop-nav">
             <Link to="/" style={{
               color: '#C28840',
               textDecoration: 'none',
@@ -81,15 +68,7 @@ function Home() {
 
           {/* Mobile Hamburger Menu */}
           <button
-            style={{
-              display: window.innerWidth <= 768 ? 'block' : 'none',
-              background: 'none',
-              border: 'none',
-              color: '#C28840',
-              fontSize: '24px',
-              cursor: 'pointer',
-              padding: '5px'
-            }}
+            className="home-mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰
@@ -98,23 +77,8 @@ function Home() {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div style={{
-            display: window.innerWidth <= 768 ? 'block' : 'none',
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            backgroundColor: 'rgba(0,0,0,0.95)',
-            backdropFilter: 'blur(10px)',
-            borderBottom: '1px solid rgba(194, 136, 64, 0.2)',
-            padding: '20px 0'
-          }}>
-            <nav style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-              padding: '0 20px'
-            }}>
+          <div className="home-mobile-nav">
+            <nav className="home-mobile-nav-links">
               <Link to="/" style={{
                 color: '#C28840',
                 textDecoration: 'none',
