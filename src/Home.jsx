@@ -150,6 +150,14 @@ function Home() {
             Ricardo Scales
           </h1>
           
+          <div style={{
+            fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '40px',
+            fontStyle: 'italic'
+          }}>
+            Pianist • Composer • Cultural Ambassador
+          </div>
           
           <div style={{
             display: 'flex',
