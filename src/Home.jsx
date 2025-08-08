@@ -398,7 +398,7 @@ function Home() {
       <footer style={{
         backgroundColor: '#000000',
         borderTop: '1px solid rgba(194, 136, 64, 0.2)',
-        padding: '40px 15px',
+        padding: '50px 20px 30px',
         color: 'white'
       }}>
         <div style={{
@@ -407,40 +407,58 @@ function Home() {
           textAlign: 'center'
         }}>
           <div style={{
-            fontSize: 'clamp(24px, 6vw, 36px)',
-            fontFamily: "'Alex Brush', cursive",
+            fontSize: 'clamp(32px, 8vw, 48px)',
+            fontFamily: "'Playfair Display', serif",
             color: '#C28840',
-            marginBottom: '20px'
+            marginBottom: '30px',
+            fontWeight: '400',
+            letterSpacing: '1px'
           }}>
             Ricardo Scales
           </div>
 
           <div style={{
-            height: '1px',
-            background: 'linear-gradient(to right, transparent, rgba(194, 136, 64, 0.3), transparent)',
-            margin: '20px auto',
-            maxWidth: '300px'
+            height: '2px',
+            background: 'linear-gradient(to right, transparent, rgba(194, 136, 64, 0.6), transparent)',
+            margin: '30px auto',
+            maxWidth: '400px'
           }}></div>
 
           <div style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
-            fontSize: 'clamp(12px, 2.5vw, 14px)',
-            color: 'rgba(255,255,255,0.7)'
+            gap: '30px',
+            flexDirection: 'column',
+            fontSize: 'clamp(14px, 3vw, 16px)',
+            color: 'rgba(255,255,255,0.8)',
+            marginTop: '25px'
           }}>
-            <p style={{ margin: 0 }}>
+            <p style={{ 
+              margin: 0,
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: '400'
+            }}>
               © 2025 Ricardo Scales. All rights reserved.
             </p>
+            
             <div style={{
-              height: '15px',
-              width: '1px',
-              backgroundColor: 'rgba(194, 136, 64, 0.3)'
+              height: '1px',
+              width: '60px',
+              backgroundColor: 'rgba(194, 136, 64, 0.4)'
             }}></div>
-            <p style={{ margin: 0, fontStyle: 'italic' }}>
-              Designed by <span style={{ color: '#C28840' }}>Marchitechs</span>
+            
+            <p style={{ 
+              margin: 0, 
+              fontStyle: 'italic',
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(13px, 2.5vw, 15px)'
+            }}>
+              Designed by <span style={{ 
+                color: '#C28840', 
+                fontWeight: '500',
+                fontStyle: 'normal'
+              }}>Marchitechs</span>
             </p>
           </div>
         </div>
