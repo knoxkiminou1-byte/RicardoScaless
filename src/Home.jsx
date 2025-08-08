@@ -457,6 +457,56 @@ function Home() {
                 </p>
               </div>
             </div>
+
+            <div style={{
+              backgroundColor: '#2a2a2a',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              transition: 'transform 0.3s ease'
+            }}>
+              <div style={{
+                height: '250px',
+                background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/476309616_1144645414332615_8348618865407374253_n_1753392146607.jpg")',
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundColor: '#2a2a2a',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '12px 12px 0 0'
+              }}>
+              </div>
+              <div style={{
+                padding: '30px'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontFamily: "'Playfair Display', serif",
+                  marginBottom: '20px',
+                  color: 'white',
+                  fontWeight: '600',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
+                }}>
+                  Legacy Continues
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontFamily: "'Inter', sans-serif",
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  wordBreak: 'keep-all',
+                  overflowWrap: 'normal'
+                }}>
+                  As a composer, civic virtuoso, and cultural pillar, Ricardo's influence resonates through every performance, every student mentored, and every community touched by his artistry. His dedication to musical excellence continues to inspire new generations of artists and audiences alike.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
