@@ -233,7 +233,7 @@ section {
 
 /* ===== MOBILE RESPONSIVE STYLES ONLY ===== */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   /* Basic container and text handling */
   * {
     box-sizing: border-box;
@@ -241,43 +241,44 @@ section {
   
   body {
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   /* Navigation mobile changes only */
   .home-logo {
-    font-size: 28px;
+    font-size: 28px !important;
   }
 
   .home-nav-container {
-    padding: 0 15px;
+    padding: 0 15px !important;
   }
 
   .home-desktop-nav {
-    display: none;
+    display: none !important;
   }
 
   .home-mobile-menu-btn {
-    display: block;
+    display: block !important;
   }
 
   /* Section spacing */
   section {
-    padding: 80px 15px 40px 15px;
-    width: 100%;
+    padding: 80px 15px 40px 15px !important;
+    width: 100% !important;
   }
 
   /* Grid layouts mobile changes only */
   .home-legacy-grid {
-    display: block;
+    display: block !important;
   }
 
   .home-journey-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 
   .home-cultural-card {
-    display: block;
+    display: block !important;
   }
 
   /* Typography */
@@ -286,46 +287,46 @@ section {
   }
 
   h2 {
-    font-size: clamp(1.3rem, 5vw, 2rem);
+    font-size: clamp(1.3rem, 5vw, 2rem) !important;
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
   }
 
   /* Contact page mobile changes only */
   .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
   }
 
   /* Music page mobile changes only */
   .music-logo {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .music-desktop-nav {
-    display: none;
+    display: none !important;
   }
 
   .music-mobile-menu-btn {
-    display: block;
+    display: block !important;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   /* Smaller mobile adjustments only */
   .home-logo {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .home-nav-container {
-    padding: 0 10px;
+    padding: 0 10px !important;
   }
 
   section {
-    padding: 80px 10px 30px 10px;
+    padding: 80px 10px 30px 10px !important;
   }
 
   h1 {
