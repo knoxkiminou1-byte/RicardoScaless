@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Music() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <div style={{
       minHeight: '100vh',
@@ -23,21 +25,23 @@ function Music() {
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '0 24px',
+          padding: '0 20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
           <div style={{
-            fontSize: '28px',
+            fontSize: window.innerWidth <= 768 ? '24px' : '28px',
             fontFamily: "'Alex Brush', cursive",
             color: '#1db954',
             fontWeight: '400'
           }}>
             <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</Link>
           </div>
+          
+          {/* Desktop Navigation */}
           <nav style={{
-            display: 'flex',
+            display: window.innerWidth <= 768 ? 'none' : 'flex',
             gap: '32px'
           }}>
             <Link to="/" style={{
@@ -69,7 +73,78 @@ function Music() {
               transition: 'color 0.2s ease'
             }}>Contact</Link>
           </nav>
+
+          {/* Mobile Hamburger Menu */}
+          <button
+            style={{
+              display: window.innerWidth <= 768 ? 'block' : 'none',
+              background: 'none',
+              border: 'none',
+              color: '#1db954',
+              fontSize: '24px',
+              cursor: 'pointer',
+              padding: '5px'
+            }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            ☰
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div style={{
+            display: window.innerWidth <= 768 ? 'block' : 'none',
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            backgroundColor: 'rgba(18, 18, 18, 0.95)',
+            backdropFilter: 'blur(10px)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            padding: '20px 0'
+          }}>
+            <nav style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px',
+              padding: '0 20px'
+            }}>
+              <Link to="/" style={{
+                color: '#b3b3b3',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/bio" style={{
+                color: '#b3b3b3',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Bio</Link>
+              <Link to="/music" style={{
+                color: '#1db954',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Music</Link>
+              <Link to="/contact" style={{
+                color: '#b3b3b3',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Artist Header */}
