@@ -339,8 +339,7 @@ function Home() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '40px',
-            alignItems: 'start',
-            marginBottom: '40px'
+            alignItems: 'start'
           }}>
             <div style={{
               backgroundColor: '#2a2a2a',
@@ -366,16 +365,26 @@ function Home() {
               }}>
                 <h3 style={{
                   fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
                   marginBottom: '20px',
-                  color: 'white'
+                  color: 'white',
+                  fontWeight: '600',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
                 }}>
                   Early Beginnings
                 </h3>
                 <p style={{
                   fontSize: '1rem',
                   lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.8)'
+                  color: 'rgba(255,255,255,0.8)',
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  wordBreak: 'keep-all',
+                  overflowWrap: 'normal'
                 }}>
                   Ricardo's musical journey began at age five, studying classical piano before discovering his passion for jazz improvisation. His formative years were marked by rigorous training and mentorship from legendary performers.
                 </p>
@@ -406,40 +415,40 @@ function Home() {
               }}>
                 <h3 style={{
                   fontSize: '1.5rem',
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
                   marginBottom: '20px',
-                  color: 'white'
+                  color: 'white',
+                  fontWeight: '600',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
                 }}>
                   Rise to Prominence
                 </h3>
                 <p style={{
                   fontSize: '1rem',
                   lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.8)'
+                  color: 'rgba(255,255,255,0.8)',
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  wordBreak: 'keep-all',
+                  overflowWrap: 'normal'
                 }}>
                   Throughout the 1990s, Ricardo established himself as a distinctive voice in contemporary jazz, releasing acclaimed albums and collaborating with industry luminaries while developing his characteristic fusion style.
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="home-cultural-card" style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr',
-            gap: '40px',
-            alignItems: 'center'
-          }}>
             <div style={{
               backgroundColor: '#2a2a2a',
               borderRadius: '12px',
               overflow: 'hidden',
-              transition: 'transform 0.3s ease',
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              alignItems: 'center'
+              transition: 'transform 0.3s ease'
             }}>
               <div style={{
-                height: '300px',
+                height: '250px',
                 background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("/attached_assets/RS by RKS  300 dpi (1)_1753419950459.jpg")',
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
@@ -447,24 +456,35 @@ function Home() {
                 backgroundColor: '#2a2a2a',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                borderRadius: '12px 12px 0 0'
               }}>
               </div>
               <div style={{
-                padding: '40px'
+                padding: '30px'
               }}>
                 <h3 style={{
-                  fontSize: '2rem',
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: '25px',
-                  color: 'white'
+                  fontSize: '1.5rem',
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  marginBottom: '20px',
+                  color: 'white',
+                  fontWeight: '600',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
                 }}>
                   Cultural Leadership
                 </h3>
                 <p style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.7',
-                  color: 'rgba(255,255,255,0.8)'
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  wordBreak: 'keep-all',
+                  overflowWrap: 'normal'
                 }}>
                   Today, Ricardo stands as a cultural pillar, balancing international performances with music education initiatives and civic engagement projects that bring artistic excellence to diverse communities. His leadership extends beyond the stage, fostering the next generation of musicians while preserving the rich traditions that define our cultural heritage.
                 </p>
