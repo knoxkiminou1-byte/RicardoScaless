@@ -135,7 +135,7 @@ function Bio() {
             marginBottom: '30px',
             fontStyle: 'italic'
           }}>
-            "The Black Liberace" • "The Black Prince"
+            "The Black Liberace"
           </div>
         </div>
       </section>
