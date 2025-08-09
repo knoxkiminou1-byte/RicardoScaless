@@ -175,7 +175,7 @@ function Home() {
       {/* Legacy Section */}
       <section style={{
         backgroundColor: '#C28840',
-        padding: '100px 40px',
+        padding: '60px 20px',
         color: 'white'
       }}>
         <div style={{
@@ -183,19 +183,16 @@ function Home() {
           margin: '0 auto'
         }}>
           <div style={{
-            display: 'flex',
-            flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
-            alignItems: 'start',
-            gap: '60px'
+            display: 'grid',
+            gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '1fr 1fr',
+            gap: window.innerWidth <= 768 ? '40px' : '60px',
+            alignItems: 'start'
           }}>
-            <div style={{
-              flex: '1',
-              paddingTop: '20px'
-            }}>
+            <div>
               <h2 style={{
-                fontSize: 'clamp(3.5rem, 7vw, 6rem)',
+                fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
                 fontFamily: "'Playfair Display', serif",
-                marginBottom: '40px',
+                marginBottom: '30px',
                 fontWeight: '400',
                 lineHeight: '1.2'
               }}>
@@ -203,23 +200,23 @@ function Home() {
               </h2>
 
               <div style={{
-                padding: 'clamp(20px, 4vw, 40px)',
+                padding: 'clamp(20px, 4vw, 30px)',
                 background: 'rgba(255, 255, 255, 0.1)',
                 borderRadius: '12px',
                 borderLeft: '4px solid white',
                 backdropFilter: 'blur(10px)'
               }}>
                 <blockquote style={{
-                  fontSize: 'clamp(1.1rem, 2.5vw, 1.3rem)',
+                  fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
                   fontStyle: 'italic',
                   color: 'white',
-                  lineHeight: '1.8',
-                  margin: '0 0 20px 0'
+                  lineHeight: '1.7',
+                  margin: '0 0 15px 0'
                 }}>
                   "When legends like Billy Joel and Harry Connick Jr. abandon their hotel rooms to join you at the piano, you know you've transcended performance and entered the realm of musical pilgrimage."
                 </blockquote>
                 <cite style={{
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.8)',
                   fontStyle: 'normal'
                 }}>
@@ -229,41 +226,36 @@ function Home() {
             </div>
 
             <div style={{
-              flex: '1',
-              paddingLeft: window.innerWidth <= 768 ? '0' : '40px'
+              paddingTop: window.innerWidth <= 768 ? '0' : '60px'
             }}>
-              <div style={{
-                padding: '20px 0'
+              <p style={{
+                fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
+                lineHeight: '1.7',
+                color: 'rgba(255,255,255,0.95)',
+                marginBottom: '25px',
+                fontFamily: "'Inter', sans-serif"
               }}>
-                <p style={{
-                  fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
-                  lineHeight: '1.8',
-                  color: 'rgba(255,255,255,0.95)',
-                  marginBottom: '30px',
-                  fontFamily: "'Inter', sans-serif"
-                }}>
-                  For over four decades, Ricardo Scales has redefined what it means to be a pianist in America. This conservatory-trained virtuoso seamlessly weaves together classical precision, jazz improvisation, gospel soul, and R&B groove.
-                </p>
+                For over four decades, Ricardo Scales has redefined what it means to be a pianist in America. This conservatory-trained virtuoso seamlessly weaves together classical precision, jazz improvisation, gospel soul, and R&B groove.
+              </p>
 
-                <p style={{
-                  fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
-                  lineHeight: '1.8',
-                  color: 'rgba(255,255,255,0.95)',
-                  marginBottom: '30px',
-                  fontFamily: "'Inter', sans-serif"
-                }}>
-                  From San Francisco's legendary Redwood Room to the Top of the Mark, Ricardo has transformed intimate venues into cultural landmarks. His performances for U.S. Presidents and international dignitaries have established him as America's unofficial musical ambassador.
-                </p>
+              <p style={{
+                fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
+                lineHeight: '1.7',
+                color: 'rgba(255,255,255,0.95)',
+                marginBottom: '25px',
+                fontFamily: "'Inter', sans-serif"
+              }}>
+                From San Francisco's legendary Redwood Room to the Top of the Mark, Ricardo has transformed intimate venues into cultural landmarks. His performances for U.S. Presidents and international dignitaries have established him as America's unofficial musical ambassador.
+              </p>
 
-                <p style={{
-                  fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
-                  lineHeight: '1.8',
-                  color: 'rgba(255,255,255,0.95)',
-                  fontFamily: "'Inter', sans-serif"
-                }}>
-                  With over 30 albums and Billboard recognition, Ricardo continues to bridge generations through the universal language of music, proving that true artistry transcends all boundaries.
-                </p>
-              </div>
+              <p style={{
+                fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
+                lineHeight: '1.7',
+                color: 'rgba(255,255,255,0.95)',
+                fontFamily: "'Inter', sans-serif"
+              }}>
+                With over 30 albums and Billboard recognition, Ricardo continues to bridge generations through the universal language of music, proving that true artistry transcends all boundaries.
+              </p>
             </div>
           </div>
         </div>
