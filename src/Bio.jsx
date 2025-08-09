@@ -136,7 +136,7 @@ function Bio() {
           </h1>
           <div style={{
             fontSize: '2.2rem',
-            color: '#C28840',
+            color: 'white',
             marginBottom: '30px',
             fontStyle: 'italic',
             fontWeight: '600'
