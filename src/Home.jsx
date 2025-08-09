@@ -232,7 +232,8 @@ function Home() {
                   fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                   lineHeight: '1.8',
                   color: 'rgba(255,255,255,0.95)',
-                  marginBottom: '30px'
+                  marginBottom: '30px',
+                  fontFamily: "'Inter', sans-serif"
                 }}>
                   For over four decades, Ricardo Scales has redefined what it means to be a pianist in America. This conservatory-trained virtuoso seamlessly weaves together classical precision, jazz improvisation, gospel soul, and R&B groove.
                 </p>
@@ -241,7 +242,8 @@ function Home() {
                   fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                   lineHeight: '1.8',
                   color: 'rgba(255,255,255,0.95)',
-                  marginBottom: '30px'
+                  marginBottom: '30px',
+                  fontFamily: "'Inter', sans-serif"
                 }}>
                   From San Francisco's legendary Redwood Room to the Top of the Mark, Ricardo has transformed intimate venues into cultural landmarks. His performances for U.S. Presidents and international dignitaries have established him as America's unofficial musical ambassador.
                 </p>
@@ -249,7 +251,8 @@ function Home() {
                 <p style={{
                   fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                   lineHeight: '1.8',
-                  color: 'rgba(255,255,255,0.95)'
+                  color: 'rgba(255,255,255,0.95)',
+                  fontFamily: "'Inter', sans-serif"
                 }}>
                   With over 30 albums and Billboard recognition, Ricardo continues to bridge generations through the universal language of music, proving that true artistry transcends all boundaries.
                 </p>
@@ -292,7 +295,8 @@ function Home() {
               <p style={{
                 fontSize: '1.1rem',
                 color: 'rgba(255,255,255,0.9)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                fontFamily: "'Inter', sans-serif"
               }}>
                 When a devastating accident paralyzed his left hand at 19, doctors declared his concert career over. But Ricardo achieved the impossible, restoring his hand through months of relentless self-therapy and proving that some dreams refuse to die.
               </p>
@@ -317,7 +321,8 @@ function Home() {
               <p style={{
                 fontSize: '1.1rem',
                 color: 'rgba(255,255,255,0.9)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                fontFamily: "'Inter', sans-serif"
               }}>
                 From San Francisco's Redwood Room to the Top of the Mark, touring superstars like Billy Joel, Harry Connick Jr., and Liza Minnelli would abandon their hotel rooms to join Ricardo for impromptu musical collaborations.
               </p>
@@ -342,7 +347,8 @@ function Home() {
               <p style={{
                 fontSize: '1.1rem',
                 color: 'rgba(255,255,255,0.9)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                fontFamily: "'Inter', sans-serif"
               }}>
                 Ricardo's artistry has graced the highest levels of leadership, performing for seated U.S. Presidents and Vice President Kamala Harris, serving as America's unofficial musical ambassador to the world.
               </p>
