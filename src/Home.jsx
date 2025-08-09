@@ -113,32 +113,43 @@ function Home() {
         textAlign: 'center'
       }}>
         <div style={{
-          maxWidth: '800px',
-          padding: '0 20px'
+          maxWidth: '1000px',
+          padding: '0 20px',
+          textAlign: 'left'
         }}>
           <h1 style={{
-            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+            fontSize: 'clamp(3rem, 6vw, 5rem)',
             fontFamily: "'Playfair Display', serif",
             color: '#C28840',
-            marginBottom: '50px',
-            fontWeight: '700',
-            letterSpacing: '2px'
+            marginBottom: '30px',
+            fontWeight: '400',
+            lineHeight: '1.2',
+            letterSpacing: '-0.02em'
           }}>
-            Composer, Civic Virtuoso, Cultural Pillar
+            Ricardo Scales: Composer, Civic Virtuoso, Cultural Pillar
           </h1>
+          <p style={{
+            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '40px',
+            lineHeight: '1.6',
+            fontFamily: "'Inter', sans-serif",
+            maxWidth: '800px'
+          }}>
+            Experience the timeless artistry of Ricardo Scales, whose musical genius transcends genres and transforms spaces. His compositions blend classical precision with jazz improvisation, creating unforgettable musical journeys that captivate audiences worldwide.
+          </p>
           <div style={{
             display: 'flex',
-            gap: '30px',
-            justifyContent: 'center',
+            gap: '20px',
             flexWrap: 'wrap'
           }}>
             <Link to="/contact" style={{
               backgroundColor: 'transparent',
               color: 'white',
               border: '2px solid white',
-              padding: '18px 40px',
+              padding: '15px 30px',
               textDecoration: 'none',
-              fontSize: '18px',
+              fontSize: '16px',
               fontWeight: '500',
               borderRadius: '5px',
               transition: 'all 0.3s ease'
@@ -148,9 +159,9 @@ function Home() {
             <Link to="/music" style={{
               backgroundColor: '#C28840',
               color: 'white',
-              padding: '18px 40px',
+              padding: '15px 30px',
               textDecoration: 'none',
-              fontSize: '18px',
+              fontSize: '16px',
               fontWeight: '500',
               borderRadius: '5px',
               transition: 'all 0.3s ease'
