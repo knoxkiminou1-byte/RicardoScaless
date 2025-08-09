@@ -143,6 +143,23 @@ section {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Music page mobile navigation */
+.music-mobile-nav {
+  background-color: rgba(18, 18, 18, 0.95);
+  padding: 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.music-mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   /* Show mobile menu button */
