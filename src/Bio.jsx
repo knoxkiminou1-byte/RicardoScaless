@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Bio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -16,9 +15,15 @@ function Bio() {
       <header className="home-header">
         <div className="home-nav-container">
           <div className="home-logo">
-            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Ricardo Scales</Link>
+            <Link to="/" style={{
+              color: '#C28840',
+              textDecoration: 'none',
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: '2rem',
+              fontWeight: '600'
+            }}>Ricardo Scales</Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="home-desktop-nav">
             <Link to="/" style={{
