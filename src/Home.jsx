@@ -288,7 +288,7 @@ function Home() {
             }}>
               <div style={{
                 height: '200px',
-                backgroundImage: 'url("/attached_assets/IMG_5832_1754674043202.png")',
+                backgroundImage: 'url("/attached_assets/Untitled design (50)_1753418865395.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}></div>
