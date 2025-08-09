@@ -27,11 +27,31 @@ nav a:hover {
 }
 
 /* Legacy Section Grid Layout */
-.home-legacy-grid {
+.legacy-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
+}
+
+.legacy-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.legacy-right {
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .legacy-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .legacy-right {
+    padding-top: 0;
+  }
 }
 
 .legacy-quote {

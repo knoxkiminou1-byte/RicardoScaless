@@ -182,13 +182,8 @@ function Home() {
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '1fr 1fr',
-            gap: window.innerWidth <= 768 ? '40px' : '60px',
-            alignItems: 'start'
-          }}>
-            <div>
+          <div className="legacy-container">
+            <div className="legacy-left">
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
                 fontFamily: "'Playfair Display', serif",
@@ -225,9 +220,7 @@ function Home() {
               </div>
             </div>
 
-            <div style={{
-              paddingTop: window.innerWidth <= 768 ? '0' : '60px'
-            }}>
+            <div className="legacy-right">
               <p style={{
                 fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
                 lineHeight: '1.7',
