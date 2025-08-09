@@ -398,7 +398,7 @@ function Home() {
                 height: '200px',
                 backgroundImage: 'url("/attached_assets/0 0 10 300 dpi for conversion (2023_01_11 05_44_32 UTC)_1753419956252.jpg")',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center top'
               }}></div>
               <div style={{
                 padding: '30px'
