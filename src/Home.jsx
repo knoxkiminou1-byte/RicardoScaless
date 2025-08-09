@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -195,7 +194,7 @@ function Home() {
               }}>
                 Legacy of Musical Excellence
               </h2>
-              
+
               <div style={{
                 padding: 'clamp(20px, 4vw, 40px)',
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -221,7 +220,7 @@ function Home() {
                 </cite>
               </div>
             </div>
-            
+
             <div style={{
               flex: '1',
               paddingLeft: window.innerWidth <= 768 ? '0' : '40px'
@@ -237,7 +236,7 @@ function Home() {
                 }}>
                   For over four decades, Ricardo Scales has redefined what it means to be a pianist in America. This conservatory-trained virtuoso seamlessly weaves together classical precision, jazz improvisation, gospel soul, and R&B groove.
                 </p>
-                
+
                 <p style={{
                   fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                   lineHeight: '1.8',
@@ -246,7 +245,7 @@ function Home() {
                 }}>
                   From San Francisco's legendary Redwood Room to the Top of the Mark, Ricardo has transformed intimate venues into cultural landmarks. His performances for U.S. Presidents and international dignitaries have established him as America's unofficial musical ambassador.
                 </p>
-                
+
                 <p style={{
                   fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                   lineHeight: '1.8',
