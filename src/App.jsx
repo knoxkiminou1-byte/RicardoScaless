@@ -1,14 +1,20 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AAFC from './AAFC.jsx';
+import Home from './Home.jsx';
+import Bio from './Bio.jsx';
+import Music from './Music.jsx';
+import Contact from './Contact.jsx';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AAFC />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/bio" element={<Bio />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
