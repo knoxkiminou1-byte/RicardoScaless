@@ -109,6 +109,7 @@ function Music() {
   const handleClosePlayer = () => {
     if (playerRef.current) {
       playerRef.current.destroy();
+      playerRef.current = null;
     }
     setCurrentTrack(null);
   };
@@ -453,8 +454,9 @@ function Music() {
                 role="button"
                 tabIndex={0}
                 aria-label={`Play ${track.title} by ${track.artist}`}
-                onKeyPress={(e) => {
+                onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
                     handleTrackClick(track);
                   }
                 }}
