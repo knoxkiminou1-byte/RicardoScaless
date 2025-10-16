@@ -1,5 +1,5 @@
 run = "npm run dev"
-modules = ["nodejs-20", "python-3.11"]
+modules = ["nodejs-20"]
 hidden = [".config", "package-lock.json"]
 entrypoint = "index.html"
 
@@ -17,10 +17,6 @@ publicDir = "dist"
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 46401
-externalPort = 3000
 
 [workflows]
 runButton = "Project"
@@ -57,4 +53,3 @@ outputType = "webview"
 
 [agent]
 expertMode = true
-integrations = ["youtube:1.0.0"]

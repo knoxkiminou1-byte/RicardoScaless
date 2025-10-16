@@ -1,406 +1,597 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Music() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [musicData, setMusicData] = useState([]);
-  const [currentTrack, setCurrentTrack] = useState(null);
-  const [player, setPlayer] = useState(null);
-  const apiReadyPromiseRef = useRef(
-    new Promise((resolve) => {
-      if (window.YT && window.YT.Player) {
-        resolve();
-      } else {
-        window.onYouTubeIframeAPIReady = () => {
-          resolve();
-          delete window.onYouTubeIframeAPIReady;
-        };
-
-        if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
-          const tag = document.createElement('script');
-          tag.src = 'https://www.youtube.com/iframe_api';
-          const firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
-      }
-    })
-  );
-  const playerInstanceRef = useRef(null);
-
-  useEffect(() => {
-    fetch('/music.json')
-      .then(res => res.json())
-      .then(data => setMusicData(data))
-      .catch(err => console.error('Error loading music data:', err));
-
-    return () => {
-      if (playerInstanceRef.current) {
-        playerInstanceRef.current.destroy();
-        playerInstanceRef.current = null;
-        setPlayer(null);
-      }
-    };
-  }, []);
-
-  const createPlayer = async (track) => {
-    await apiReadyPromiseRef.current;
-
-    if (playerInstanceRef.current) {
-      playerInstanceRef.current.loadVideoById(track.youtubeId);
-      return;
-    }
-
-    const newPlayer = new window.YT.Player('youtube-player', {
-      height: '100%',
-      width: '100%',
-      videoId: track.youtubeId,
-      playerVars: {
-        autoplay: 1,
-        modestbranding: 1,
-        rel: 0
-      },
-      events: {
-        onReady: (event) => {
-          event.target.mute();
-          event.target.playVideo();
-          setTimeout(() => event.target.unMute(), 1000);
-        }
-      }
-    });
-    playerInstanceRef.current = newPlayer;
-    setPlayer(newPlayer);
-  };
-
-  const playTrack = (track) => {
-    setCurrentTrack(track);
-    createPlayer(track);
-  };
-
-  const closePlayer = () => {
-    if (player) {
-      player.stopVideo();
-    }
-    setCurrentTrack(null);
-  };
-
-  const formatViews = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
+  
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0a0a0a',
+      backgroundColor: '#121212',
       color: 'white',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif"
+      fontFamily: "'Helvetica Neue', Arial, sans-serif"
     }}>
+      {/* Navigation Header */}
       <header style={{
         position: 'fixed',
         top: 0,
         width: '100%',
-        backgroundColor: 'rgba(10, 10, 10, 0.95)',
+        backgroundColor: 'rgba(18, 18, 18, 0.95)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         zIndex: 1000,
         padding: '16px 0'
       }}>
         <div style={{
-          maxWidth: '1400px',
+          maxWidth: '1200px',
           margin: '0 auto',
-          padding: '0 24px',
+          padding: '0 20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <div>
+          <div className="music-logo">
             <Link to="/" style={{
               color: 'inherit',
               textDecoration: 'none',
               fontFamily: "'Dancing Script', cursive",
-              fontSize: '1.8rem',
-              fontWeight: '600',
-              background: 'linear-gradient(135deg, #d4af37, #f4e5b0)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              fontSize: '2rem',
+              fontWeight: '600'
             }}>Ricardo Scales</Link>
           </div>
           
-          <nav style={{ display: 'flex', gap: '32px' }} className="desktop-nav">
+          {/* Desktop Navigation */}
+          <nav className="music-desktop-nav">
             <Link to="/" style={{
-              color: '#999',
+              color: '#b3b3b3',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: '500',
-              transition: 'color 0.2s'
+              transition: 'color 0.2s ease'
             }}>Home</Link>
             <Link to="/bio" style={{
-              color: '#999',
+              color: '#b3b3b3',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: '500',
-              transition: 'color 0.2s'
+              transition: 'color 0.2s ease'
             }}>Bio</Link>
             <Link to="/music" style={{
-              color: '#d4af37',
-              textDecoration: 'none',
-              fontSize: '14px',
-              fontWeight: '500'
-            }}>Music</Link>
-            <Link to="/contact" style={{
-              color: '#999',
+              color: '#1db954',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: '500',
-              transition: 'color 0.2s'
+              transition: 'color 0.2s ease'
+            }}>Music</Link>
+            <Link to="/contact" style={{
+              color: '#b3b3b3',
+              textDecoration: 'none',
+              fontSize: '14px',
+              fontWeight: '500',
+              transition: 'color 0.2s ease'
             }}>Contact</Link>
           </nav>
 
+          {/* Mobile Hamburger Menu */}
           <button
+            className="music-mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            style={{
-              display: 'none',
-              background: 'none',
-              border: 'none',
-              color: 'white',
-              fontSize: '24px',
-              cursor: 'pointer'
-            }}
-            className="mobile-menu-btn"
-          >☰</button>
+          >
+            ☰
+          </button>
         </div>
 
+        {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div style={{
-            backgroundColor: '#0a0a0a',
-            padding: '20px 24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)'
-          }} className="mobile-nav">
-            <nav style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <Link to="/" onClick={() => setIsMenuOpen(false)} style={{
-                color: '#999',
+          <div className="music-mobile-nav">
+            <nav className="music-mobile-nav-links">
+              <Link to="/" style={{
+                color: '#b3b3b3',
                 textDecoration: 'none',
-                fontSize: '16px'
-              }}>Home</Link>
-              <Link to="/bio" onClick={() => setIsMenuOpen(false)} style={{
-                color: '#999',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/bio" style={{
+                color: '#b3b3b3',
                 textDecoration: 'none',
-                fontSize: '16px'
-              }}>Bio</Link>
-              <Link to="/music" onClick={() => setIsMenuOpen(false)} style={{
-                color: '#d4af37',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Bio</Link>
+              <Link to="/music" style={{
+                color: '#1db954',
                 textDecoration: 'none',
-                fontSize: '16px'
-              }}>Music</Link>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)} style={{
-                color: '#999',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Music</Link>
+              <Link to="/contact" style={{
+                color: '#b3b3b3',
                 textDecoration: 'none',
-                fontSize: '16px'
-              }}>Contact</Link>
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Contact</Link>
             </nav>
           </div>
         )}
       </header>
 
-      <main style={{ paddingTop: '80px', maxWidth: '1400px', margin: '0 auto', padding: '100px 24px 48px' }}>
-        <h1 style={{
-          fontSize: 'clamp(32px, 5vw, 48px)',
-          fontWeight: '700',
-          marginBottom: '8px',
-          background: 'linear-gradient(135deg, #d4af37, #f4e5b0)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}>Music Videos</h1>
-        <p style={{ color: '#999', marginBottom: '40px', fontSize: '16px' }}>
-          Click any track to watch and listen
-        </p>
+      {/* Artist Header */}
+      <section style={{
+        paddingTop: '80px',
+        background: 'linear-gradient(180deg, #1db954 0%, #121212 100%)',
+        padding: '80px 24px 0'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'flex-end',
+          gap: '24px',
+          paddingBottom: '24px'
+        }}>
+          <div style={{
+            width: '232px',
+            height: '232px',
+            borderRadius: '50%',
+            backgroundImage: 'url("/attached_assets/ricardo upsclaed_1753392463500.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            boxShadow: '0 4px 60px rgba(0,0,0,.5)'
+          }}></div>
 
-        {currentTrack && (
-          <div role="region" aria-label="Now Playing" style={{
-            marginBottom: '40px',
-            backgroundColor: '#1a1a1a',
-            borderRadius: '12px',
-            overflow: 'hidden',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
+          <div>
+            <p style={{
+              margin: '0 0 8px 0',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: 'white',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>Artist</p>
+            <h1 style={{
+              margin: '0 0 24px 0',
+              fontSize: 'clamp(32px, 6vw, 96px)',
+              fontWeight: '900',
+              color: 'white',
+              lineHeight: '1.1'
+            }}>Ricardo Scales</h1>
+            <p style={{
+              margin: '0',
+              fontSize: '16px',
+              color: '#b3b3b3',
+              fontWeight: '400'
+            }}>2.1M monthly listeners</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Action Bar */}
+      <section style={{
+        backgroundColor: '#121212',
+        padding: '24px'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '32px'
+        }}>
+          <button style={{
+            backgroundColor: '#1db954',
+            border: 'none',
+            borderRadius: '50%',
+            width: '56px',
+            height: '56px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
           }}>
             <div style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0
-            }}>
-              <div
-                id="youtube-player"
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%'
-                }}
-              />
-            </div>
-            <div style={{
-              padding: '20px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              backgroundColor: '#151515'
-            }}>
-              <div>
-                <div style={{ fontSize: '18px', fontWeight: '600', marginBottom: '4px' }}>
-                  {currentTrack.title}
-                </div>
-                <div style={{ fontSize: '14px', color: '#999' }}>
-                  {currentTrack.artist} • {currentTrack.duration}
-                </div>
-              </div>
-              <button
-                onClick={closePlayer}
-                aria-label="Close player"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: 'none',
-                  color: 'white',
-                  padding: '10px 20px',
-                  borderRadius: '20px',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
-                onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.1)'}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        )}
+              width: '0',
+              height: '0',
+              borderLeft: '12px solid white',
+              borderTop: '8px solid transparent',
+              borderBottom: '8px solid transparent',
+              marginLeft: '2px'
+            }}></div>
+          </button>
 
+          <button style={{
+            backgroundColor: 'transparent',
+            border: '1px solid #535353',
+            borderRadius: '4px',
+            padding: '8px 16px',
+            color: 'white',
+            fontSize: '14px',
+            fontWeight: '700',
+            cursor: 'pointer',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>Following</button>
+
+          <div style={{
+            color: '#b3b3b3',
+            fontSize: '32px',
+            cursor: 'pointer'
+          }}>⋯</div>
+        </div>
+      </section>
+
+      {/* Popular Tracks */}
+      <section style={{
+        backgroundColor: '#121212',
+        padding: '0 24px 32px'
+      }}>
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '24px'
+          maxWidth: '1200px',
+          margin: '0 auto'
         }}>
-          {musicData.map((track, index) => (
-            <div
-              key={index}
-              onClick={() => playTrack(track)}
-              role="button"
-              tabIndex={0}
-              aria-label={`Play ${track.title} by ${track.artist}`}
-              onKeyPress={(e) => { if (e.key === 'Enter') playTrack(track); }}
-              style={{
-                backgroundColor: '#1a1a1a',
-                borderRadius: '12px',
-                overflow: 'hidden',
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            color: 'white',
+            margin: '0 0 16px 0'
+          }}>Popular</h2>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px'
+          }}>
+            {[
+              { rank: 1, title: "I'm Here!", plays: "12,345,678", duration: "4:32" },
+              { rank: 2, title: "Third Stream Dreams", plays: "8,123,456", duration: "5:18" },
+              { rank: 3, title: "San Francisco Nights", plays: "6,789,012", duration: "4:45" },
+              { rank: 4, title: "Redwood Room Memories", plays: "5,234,567", duration: "6:12" },
+              { rank: 5, title: "Top of the Mark", plays: "4,567,890", duration: "5:22" }
+            ].map((track, index) => (
+              <div key={index} style={{
+                display: 'grid',
+                gridTemplateColumns: '16px 1fr auto auto',
+                gap: '16px',
+                alignItems: 'center',
+                padding: '8px 16px',
+                borderRadius: '4px',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-                position: 'relative'
+                transition: 'background-color 0.2s ease'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(212, 175, 55, 0.2)';
-                e.currentTarget.querySelector('.play-overlay').style.opacity = '1';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
-                e.currentTarget.querySelector('.play-overlay').style.opacity = '0';
-              }}
-            >
-              <div style={{ position: 'relative', paddingBottom: '100%' }}>
-                <img
-                  src={track.thumb}
-                  srcSet={`${track.thumb} 320w, ${track.thumb} 640w`}
-                  sizes="(max-width: 640px) 320px, 640px"
-                  alt={`${track.title} cover`}
-                  loading="lazy"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-                <div
-                  className="play-overlay"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'rgba(0, 0, 0, 0.6)',
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#ffffff1a'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
+                <span style={{
+                  color: '#b3b3b3',
+                  fontSize: '16px',
+                  fontWeight: '400'
+                }}>{track.rank}</span>
+
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: '#282828',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                  }}
-                >
-                  <div style={{
-                    width: '64px',
-                    height: '64px',
-                    borderRadius: '50%',
-                    background: '#d4af37',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
+                    fontSize: '12px',
+                    fontWeight: '700',
+                    color: '#1db954'
+                  }}>RS</div>
+                  <div>
                     <div style={{
-                      width: 0,
-                      height: 0,
-                      borderLeft: '20px solid white',
-                      borderTop: '12px solid transparent',
-                      borderBottom: '12px solid transparent',
-                      marginLeft: '4px'
-                    }}></div>
+                      color: 'white',
+                      fontSize: '16px',
+                      fontWeight: '400',
+                      marginBottom: '4px'
+                    }}>{track.title}</div>
+                    <div style={{
+                      color: '#b3b3b3',
+                      fontSize: '14px'
+                    }}>Ricardo Scales</div>
                   </div>
                 </div>
+
+                <span style={{
+                  color: '#b3b3b3',
+                  fontSize: '14px'
+                }}>{track.plays}</span>
+
+                <span style={{
+                  color: '#b3b3b3',
+                  fontSize: '14px'
+                }}>{track.duration}</span>
               </div>
-              
-              <div style={{ padding: '16px' }}>
+            ))}
+          </div>
+
+          <button style={{
+            backgroundColor: 'transparent',
+            border: 'none',
+            color: '#b3b3b3',
+            fontSize: '14px',
+            fontWeight: '700',
+            padding: '8px 0',
+            cursor: 'pointer',
+            marginTop: '16px',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>Show all</button>
+        </div>
+      </section>
+
+      {/* Albums */}
+      <section style={{
+        backgroundColor: '#121212',
+        padding: '0 24px 32px'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '16px'
+          }}>
+            <h2 style={{
+              fontSize: '24px',
+              fontWeight: '700',
+              color: 'white',
+              margin: '0'
+            }}>Albums</h2>
+            <button style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: '#b3b3b3',
+              fontSize: '12px',
+              fontWeight: '700',
+              cursor: 'pointer',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>Show all</button>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+            gap: '24px'
+          }}>
+            {[
+              { 
+                title: "All the Way", 
+                year: "2016", 
+                cover: "AW",
+                links: {
+                  spotify: "https://open.spotify.com/intl-es/album/3Dsxs0y5re05xgsQYKeMri",
+                  apple: "https://music.apple.com/us/album/all-the-way/1679104453",
+                  deezer: "https://www.deezer.com/en/album/421818407"
+                }
+              },
+              { 
+                title: "Summertime and You", 
+                year: "2011", 
+                cover: "SY",
+                links: {
+                  apple: "https://music.apple.com/us/album/summertime-and-you/1760599954",
+                  deezer: "https://www.deezer.com/en/album/623538451",
+                  allmusic: "https://www.allmusic.com/album/summertime-and-you-mw0002137367"
+                }
+              },
+              { 
+                title: "For the Love in You", 
+                year: "2010", 
+                cover: "FL",
+                links: {
+                  apple: "https://music.apple.com/us/album/for-the-love-in-you/1717490006",
+                  allmusic: "https://www.allmusic.com/album/for-the-love-in-you-mw0001993458"
+                }
+              },
+              { 
+                title: "I'm Here!", 
+                year: "2007", 
+                cover: "IH",
+                links: {
+                  apple: "https://music.apple.com/us/album/im-here/1680319784"
+                }
+              },
+              { 
+                title: "Happy Holidays", 
+                year: "2005", 
+                cover: "HH",
+                links: {
+                  apple: "https://music.apple.com/us/album/happy-holidays-forever-love/331104240"
+                }
+              },
+              { 
+                title: "Destiny", 
+                year: "2004", 
+                cover: "DS",
+                links: {
+                  apple: "https://music.apple.com/us/album/destiny/1680331659"
+                }
+              }
+            ].map((album, index) => (
+              <div key={index} style={{
+                backgroundColor: '#181818',
+                borderRadius: '8px',
+                padding: '16px',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s ease',
+                position: 'relative'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#282828'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#181818'}>
+                <div style={{
+                  width: '100%',
+                  aspectRatio: '1',
+                  backgroundColor: '#1db954',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '32px',
+                  fontWeight: '900',
+                  color: 'white',
+                  marginBottom: '16px',
+                  boxShadow: '0 8px 24px rgba(0,0,0,.5)'
+                }}>{album.cover}</div>
+
                 <h3 style={{
+                  color: 'white',
                   fontSize: '16px',
-                  fontWeight: '600',
-                  marginBottom: '4px',
+                  fontWeight: '700',
+                  margin: '0 0 4px 0',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap'
-                }}>{track.title}</h3>
+                }}>{album.title}</h3>
+
                 <p style={{
+                  color: '#b3b3b3',
                   fontSize: '14px',
-                  color: '#999',
-                  marginBottom: '8px'
-                }}>{track.artist}</p>
+                  margin: '0 0 8px 0'
+                }}>{album.year} • Album</p>
+
                 <div style={{
                   display: 'flex',
-                  justifyContent: 'space-between',
-                  fontSize: '12px',
-                  color: '#666'
+                  gap: '8px',
+                  flexWrap: 'wrap'
                 }}>
-                  <span>{track.duration}</span>
-                  <span>{formatViews(track.views)} views</span>
+                  {album.links.spotify && (
+                    <a href={album.links.spotify} target="_blank" rel="noopener noreferrer" style={{
+                      color: '#1db954',
+                      fontSize: '12px',
+                      textDecoration: 'none',
+                      padding: '4px 8px',
+                      backgroundColor: 'rgba(29, 185, 84, 0.1)',
+                      borderRadius: '4px',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(29, 185, 84, 0.2)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(29, 185, 84, 0.1)'}>
+                      Spotify
+                    </a>
+                  )}
+                  {album.links.apple && (
+                    <a href={album.links.apple} target="_blank" rel="noopener noreferrer" style={{
+                      color: '#fa233b',
+                      fontSize: '12px',
+                      textDecoration: 'none',
+                      padding: '4px 8px',
+                      backgroundColor: 'rgba(250, 35, 59, 0.1)',
+                      borderRadius: '4px',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(250, 35, 59, 0.2)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(250, 35, 59, 0.1)'}>
+                      Apple
+                    </a>
+                  )}
+                  {album.links.deezer && (
+                    <a href={album.links.deezer} target="_blank" rel="noopener noreferrer" style={{
+                      color: '#feaa2d',
+                      fontSize: '12px',
+                      textDecoration: 'none',
+                      padding: '4px 8px',
+                      backgroundColor: 'rgba(254, 170, 45, 0.1)',
+                      borderRadius: '4px',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(254, 170, 45, 0.2)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(254, 170, 45, 0.1)'}>
+                      Deezer
+                    </a>
+                  )}
+                  {album.links.allmusic && (
+                    <a href={album.links.allmusic} target="_blank" rel="noopener noreferrer" style={{
+                      color: '#7289da',
+                      fontSize: '12px',
+                      textDecoration: 'none',
+                      padding: '4px 8px',
+                      backgroundColor: 'rgba(114, 137, 218, 0.1)',
+                      borderRadius: '4px',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(114, 137, 218, 0.2)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(114, 137, 218, 0.1)'}>
+                      AllMusic
+                    </a>
+                  )}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .mobile-menu-btn {
-            display: block !important;
-          }
-        }
-      `}</style>
+      {/* About */}
+      <section style={{
+        backgroundColor: '#121212',
+        padding: '0 24px 48px'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            color: 'white',
+            margin: '0 0 16px 0'
+          }}>About</h2>
+
+          <div style={{
+            backgroundColor: '#181818',
+            borderRadius: '8px',
+            padding: '24px',
+            display: 'flex',
+            gap: '24px',
+            alignItems: 'center'
+          }}>
+            <div style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '50%',
+              backgroundImage: 'url("/attached_assets/ricardo upsclaed_1753392463500.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              flexShrink: 0
+            }}></div>
+
+            <div>
+              <p style={{
+                color: 'white',
+                fontSize: '16px',
+                lineHeight: '1.6',
+                margin: '0 0 16px 0'
+              }}>
+                Known as "The Black Liberace," Ricardo Scales has captivated audiences for over four decades with his virtuoso piano performances and innovative musical arrangements that blend classical, jazz, and contemporary styles.
+              </p>
+              <p style={{
+                color: '#b3b3b3',
+                fontSize: '14px',
+                margin: '0'
+              }}>
+                2.1M monthly listeners • 847K followers
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
