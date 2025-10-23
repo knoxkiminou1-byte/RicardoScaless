@@ -615,7 +615,7 @@ function Music() {
               { 
                 title: "All the Way", 
                 year: "2016", 
-                cover: "AW",
+                cover: "/covers/all-the-way-album.webp",
                 links: {
                   spotify: "https://open.spotify.com/intl-es/album/3Dsxs0y5re05xgsQYKeMri",
                   apple: "https://music.apple.com/us/album/all-the-way/1679104453",
@@ -625,7 +625,7 @@ function Music() {
               { 
                 title: "Summertime and You", 
                 year: "2011", 
-                cover: "SY",
+                cover: "/covers/summertime-album.webp",
                 links: {
                   apple: "https://music.apple.com/us/album/summertime-and-you/1760599954",
                   deezer: "https://www.deezer.com/en/album/623538451",
@@ -635,7 +635,7 @@ function Music() {
               { 
                 title: "For the Love in You", 
                 year: "2010", 
-                cover: "FL",
+                cover: "/covers/for-the-love-album.webp",
                 links: {
                   apple: "https://music.apple.com/us/album/for-the-love-in-you/1717490006",
                   allmusic: "https://www.allmusic.com/album/for-the-love-in-you-mw0001993458"
@@ -644,7 +644,7 @@ function Music() {
               { 
                 title: "I'm Here!", 
                 year: "2007", 
-                cover: "IH",
+                cover: "/covers/im-here-album.webp",
                 links: {
                   apple: "https://music.apple.com/us/album/im-here/1680319784"
                 }
@@ -652,7 +652,7 @@ function Music() {
               { 
                 title: "Happy Holidays", 
                 year: "2005", 
-                cover: "HH",
+                cover: "/covers/happy-holidays-album.webp",
                 links: {
                   apple: "https://music.apple.com/us/album/happy-holidays-forever-love/331104240"
                 }
@@ -660,7 +660,7 @@ function Music() {
               { 
                 title: "Destiny", 
                 year: "2004", 
-                cover: "DS",
+                cover: "/covers/destiny-album.webp",
                 links: {
                   apple: "https://music.apple.com/us/album/destiny/1680331659"
                 }
@@ -676,20 +676,19 @@ function Music() {
               }}
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#282828'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#181818'}>
-                <div style={{
-                  width: '100%',
-                  aspectRatio: '1',
-                  backgroundColor: '#1db954',
-                  borderRadius: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '32px',
-                  fontWeight: '900',
-                  color: 'white',
-                  marginBottom: '16px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,.5)'
-                }}>{album.cover}</div>
+                <img 
+                  src={album.cover} 
+                  alt={`${album.title} album cover`}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    aspectRatio: '1',
+                    borderRadius: '8px',
+                    objectFit: 'cover',
+                    marginBottom: '16px',
+                    boxShadow: '0 8px 24px rgba(0,0,0,.5)'
+                  }}
+                />
 
                 <h3 style={{
                   color: 'white',
