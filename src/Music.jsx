@@ -174,6 +174,13 @@ function Music() {
               fontWeight: '500',
               transition: 'color 0.2s ease'
             }}>Music</Link>
+            <Link to="/achievements" style={{
+              color: '#b3b3b3',
+              textDecoration: 'none',
+              fontSize: '14px',
+              fontWeight: '500',
+              transition: 'color 0.2s ease'
+            }}>Achievements</Link>
             <Link to="/contact" style={{
               color: '#b3b3b3',
               textDecoration: 'none',
@@ -236,6 +243,14 @@ function Music() {
                 transition: 'color 0.2s ease',
                 padding: '10px 0'
               }} onClick={() => setIsMenuOpen(false)}>Music</Link>
+              <Link to="/achievements" style={{
+                color: '#b3b3b3',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '500',
+                transition: 'color 0.2s ease',
+                padding: '10px 0'
+              }} onClick={() => setIsMenuOpen(false)}>Achievements</Link>
               <Link to="/contact" style={{
                 color: '#b3b3b3',
                 textDecoration: 'none',

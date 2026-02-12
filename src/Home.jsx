@@ -43,6 +43,13 @@ function Home() {
               fontWeight: '500',
               transition: 'color 0.3s ease'
             }}>Music</Link>
+            <Link to="/achievements" style={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '16px',
+              fontWeight: '500',
+              transition: 'color 0.3s ease'
+            }}>Achievements</Link>
             <Link to="/contact" style={{
               color: 'white',
               textDecoration: 'none',
@@ -90,6 +97,12 @@ function Home() {
                 fontSize: '18px',
                 fontWeight: '500'
               }} onClick={() => setIsMenuOpen(false)}>Music</Link>
+              <Link to="/achievements" style={{
+                color: 'white',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontWeight: '500'
+              }} onClick={() => setIsMenuOpen(false)}>Achievements</Link>
               <Link to="/contact" style={{
                 color: 'white',
                 textDecoration: 'none',
