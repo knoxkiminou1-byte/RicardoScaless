@@ -1,10 +1,10 @@
 run = "npm run dev"
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "web"]
 hidden = [".config", "package-lock.json"]
 entrypoint = "index.html"
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-25_05"
 packages = ["imagemagick", "ffmpeg"]
 
 [unitTest]
@@ -23,15 +23,6 @@ externalPort = 80
 runButton = "Project"
 
 [[workflows.workflow]]
-name = "Start Dev Server"
-author = 42167981
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev"
-
-[[workflows.workflow]]
 name = "Project"
 mode = "parallel"
 author = "agent"
@@ -44,13 +35,13 @@ args = "Server"
 name = "Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev -- --port 5000"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
 
 [agent]
 expertMode = true

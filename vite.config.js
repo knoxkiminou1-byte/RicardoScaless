@@ -8,9 +8,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5000,
     strictPort: true,
+    allowedHosts: true,
     hmr: {
-      clientPort: 5000,
-      host: 'localhost',
+      clientPort: 443,
     },
   }
 })
