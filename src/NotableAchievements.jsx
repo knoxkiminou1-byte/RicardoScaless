@@ -258,6 +258,78 @@ function NotableAchievements() {
           </div>
 
           <div style={{
+            backgroundColor: '#1a1a1a',
+            padding: '50px',
+            borderRadius: '12px',
+            marginTop: '60px',
+            marginBottom: '60px',
+            borderLeft: '4px solid #C28840'
+          }}>
+            <h2 style={{
+              fontSize: '2.2rem',
+              fontFamily: "'Playfair Display', serif",
+              color: '#C28840',
+              marginBottom: '15px',
+              fontWeight: '400'
+            }}>
+              African American Bay Area Legends
+            </h2>
+            <p style={{
+              fontSize: '1rem',
+              color: 'rgba(255,255,255,0.6)',
+              marginBottom: '30px',
+              fontStyle: 'italic'
+            }}>
+              Letter from Johnny Mathis via Amy Farrell, PR Director for Johnny Mathis & Jon Mat Records — January 2025
+            </p>
+            <div style={{
+              backgroundColor: '#0d0d0d',
+              padding: '40px',
+              borderRadius: '8px',
+              border: '1px solid rgba(194, 136, 64, 0.2)',
+              marginBottom: '30px',
+              lineHeight: '1.8',
+              fontSize: '1.05rem',
+              color: 'rgba(255,255,255,0.85)'
+            }}>
+              <p style={{ marginBottom: '20px', fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>
+                To The Jones Memorial Methodist Men Honorees, and the Congregation of United Methodist Church:
+              </p>
+              <p style={{ marginBottom: '20px' }}>
+                Johnny Mathis sends his sincere thanks to you all for this kind acknowledgement of appreciation & invitation to attend this wonderful celebration. He is truly humbled on this special occasion to be included as an Honorable Mention in such stellar company as these African American Bay Area Legends...
+              </p>
+              <p style={{
+                textAlign: 'center',
+                color: '#C28840',
+                fontStyle: 'italic',
+                fontSize: '1.1rem',
+                margin: '30px 0',
+                lineHeight: '1.6'
+              }}>
+                Jazz musician & composer Mr. John Handy, virtuoso pianist Mr. Ricardo Scales, composer & electronic musician Mr. Todd Cochran, and former San Francisco Mayor Mr. Willie Brown
+              </p>
+              <p style={{ marginBottom: '20px' }}>
+                And so, whether his path has crossed with yours directly or not, Johnny Mathis is beyond grateful to be counted among these African American Bay Area Legends. He sends his deep thanks again for this acknowledgement, and his heartfelt congratulations to all the honorees on their inestimable & inspiring achievements.
+              </p>
+              <p style={{ marginBottom: '5px', fontStyle: 'italic' }}>All The Best,</p>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', marginTop: '20px' }}>
+                Via Amy Farrell<br />
+                PR Director for Johnny Mathis & Jon Mat Records
+              </p>
+            </div>
+            <blockquote style={{
+              fontSize: '1.3rem',
+              fontStyle: 'italic',
+              color: '#C28840',
+              margin: '30px 0 15px 0',
+              lineHeight: '1.5',
+              textAlign: 'center'
+            }}>
+              Honored as an African American Bay Area Legend alongside Johnny Mathis and former San Francisco Mayor Willie Brown
+            </blockquote>
+          </div>
+
+          <div style={{
             textAlign: 'center',
             padding: '60px 0'
           }}>
