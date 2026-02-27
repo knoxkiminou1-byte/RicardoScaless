@@ -4,7 +4,50 @@ import Footer from './Footer';
 
 function Contact() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    eventType: '',
+    message: ''
+  });
+  const [submitStatus, setSubmitStatus] = useState('idle');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus('sending');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ricardoscalespianist@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          'Event Type': formData.eventType || 'Not specified',
+          message: formData.message,
+          _subject: `New Booking Inquiry from ${formData.name}`,
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', eventType: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+    }
+  };
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -12,7 +55,6 @@ function Contact() {
       color: 'white',
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
     }}>
-      {/* Navigation Header */}
       <header className="home-header">
         <div className="home-nav-container">
           <div className="home-logo">
@@ -25,7 +67,6 @@ function Contact() {
             }}>Ricardo Scales</Link>
           </div>
           
-          {/* Desktop Navigation */}
           <nav className="home-desktop-nav">
             <Link to="/" style={{
               color: 'rgba(255,255,255,0.8)',
@@ -64,7 +105,6 @@ function Contact() {
             }}>Contact</Link>
           </nav>
 
-          {/* Mobile Hamburger Menu */}
           <button
             className="home-mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -73,7 +113,6 @@ function Contact() {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="home-mobile-nav">
             <nav className="home-mobile-nav-links">
@@ -122,7 +161,6 @@ function Contact() {
         )}
       </header>
 
-      {/* Main Contact Section */}
       <section style={{
         backgroundColor: '#0a0a0a',
         padding: '120px 40px'
@@ -132,7 +170,6 @@ function Contact() {
           margin: '0 auto'
         }}>
           <div className="contact-grid">
-            {/* Contact Information */}
             <div>
               <h2 style={{
                 fontSize: '2.5rem',
@@ -161,13 +198,13 @@ function Contact() {
                 }}>
                   For concert bookings, private events, corporate functions, and special performances.
                 </p>
-                <a href="mailto:booking@ricardoscales.com" style={{
+                <a href="mailto:ricardoscalespianist@gmail.com" style={{
                   color: '#C28840',
                   fontSize: '1.1rem',
                   textDecoration: 'none',
                   fontWeight: '500'
                 }}>
-                  booking@ricardoscales.com
+                  ricardoscalespianist@gmail.com
                 </a>
               </div>
 
@@ -188,13 +225,13 @@ function Contact() {
                 }}>
                   Interview requests, media kits, and press inquiries.
                 </p>
-                <a href="mailto:press@ricardoscales.com" style={{
+                <a href="mailto:ricardoscalespianist@gmail.com" style={{
                   color: '#C28840',
                   fontSize: '1.1rem',
                   textDecoration: 'none',
                   fontWeight: '500'
                 }}>
-                  press@ricardoscales.com
+                  ricardoscalespianist@gmail.com
                 </a>
               </div>
 
@@ -226,7 +263,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div style={{
               backgroundColor: '#1a1a1a',
               padding: '50px',
@@ -243,7 +279,37 @@ function Contact() {
                 Send a Message
               </h3>
 
-              <form style={{
+              {submitStatus === 'success' && (
+                <div style={{
+                  backgroundColor: 'rgba(34, 197, 94, 0.15)',
+                  border: '1px solid rgba(34, 197, 94, 0.4)',
+                  borderRadius: '8px',
+                  padding: '20px',
+                  marginBottom: '25px',
+                  color: '#86efac',
+                  fontSize: '16px',
+                  lineHeight: '1.6'
+                }}>
+                  Thank you for your message! We will get back to you shortly.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div style={{
+                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
+                  border: '1px solid rgba(239, 68, 68, 0.4)',
+                  borderRadius: '8px',
+                  padding: '20px',
+                  marginBottom: '25px',
+                  color: '#fca5a5',
+                  fontSize: '16px',
+                  lineHeight: '1.6'
+                }}>
+                  Something went wrong. Please try again or email us directly at ricardoscalespianist@gmail.com.
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} style={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '25px'
@@ -261,6 +327,9 @@ function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                     style={{
                       width: '100%',
@@ -270,7 +339,8 @@ function Contact() {
                       borderRadius: '6px',
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: "'Playfair Display', serif"
+                      fontFamily: "'Playfair Display', serif",
+                      boxSizing: 'border-box'
                     }}
                   />
                 </div>
@@ -288,6 +358,9 @@ function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                     style={{
                       width: '100%',
@@ -297,7 +370,8 @@ function Contact() {
                       borderRadius: '6px',
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: "'Playfair Display', serif"
+                      fontFamily: "'Playfair Display', serif",
+                      boxSizing: 'border-box'
                     }}
                   />
                 </div>
@@ -313,23 +387,29 @@ function Contact() {
                   }}>
                     Event Type
                   </label>
-                  <select style={{
-                    width: '100%',
-                    padding: '15px',
-                    backgroundColor: '#000000',
-                    border: '1px solid rgba(255,255,255,0.2)',
-                    borderRadius: '6px',
-                    color: 'white',
-                    fontSize: '16px',
-                    fontFamily: "'Playfair Display', serif"
-                  }}>
+                  <select
+                    name="eventType"
+                    value={formData.eventType}
+                    onChange={handleChange}
+                    style={{
+                      width: '100%',
+                      padding: '15px',
+                      backgroundColor: '#000000',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      borderRadius: '6px',
+                      color: 'white',
+                      fontSize: '16px',
+                      fontFamily: "'Playfair Display', serif",
+                      boxSizing: 'border-box'
+                    }}
+                  >
                     <option value="">Select an option</option>
-                    <option value="concert">Concert Performance</option>
-                    <option value="private">Private Event</option>
-                    <option value="corporate">Corporate Function</option>
-                    <option value="wedding">Wedding</option>
-                    <option value="gala">Gala/Fundraiser</option>
-                    <option value="other">Other</option>
+                    <option value="Concert Performance">Concert Performance</option>
+                    <option value="Private Event">Private Event</option>
+                    <option value="Corporate Function">Corporate Function</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Gala/Fundraiser">Gala/Fundraiser</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -345,6 +425,9 @@ function Contact() {
                     Message *
                   </label>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     rows="6"
                     style={{
@@ -356,7 +439,8 @@ function Contact() {
                       color: 'white',
                       fontSize: '16px',
                       fontFamily: "'Playfair Display', serif",
-                      resize: 'vertical'
+                      resize: 'vertical',
+                      boxSizing: 'border-box'
                     }}
                     placeholder="Please include event date, location, duration, and any specific requirements..."
                   />
@@ -364,26 +448,32 @@ function Contact() {
 
                 <button
                   type="submit"
+                  disabled={submitStatus === 'sending'}
                   style={{
-                    backgroundColor: '#C28840',
+                    backgroundColor: submitStatus === 'sending' ? '#8a6030' : '#C28840',
                     color: 'white',
                     border: 'none',
                     padding: '18px 40px',
                     fontSize: '16px',
                     fontWeight: '600',
                     borderRadius: '6px',
-                    cursor: 'pointer',
+                    cursor: submitStatus === 'sending' ? 'not-allowed' : 'pointer',
                     transition: 'all 0.3s ease',
-                    marginTop: '20px'
+                    marginTop: '20px',
+                    opacity: submitStatus === 'sending' ? 0.7 : 1
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#A67234';
+                    if (submitStatus !== 'sending') {
+                      e.target.style.backgroundColor = '#A67234';
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#C28840';
+                    if (submitStatus !== 'sending') {
+                      e.target.style.backgroundColor = '#C28840';
+                    }
                   }}
                 >
-                  Send Message
+                  {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -391,7 +481,6 @@ function Contact() {
         </div>
       </section>
 
-      {/* Footer Note */}
       <section style={{
         backgroundColor: '#C28840',
         padding: '60px 40px',

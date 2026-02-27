@@ -37,11 +37,23 @@ A personal website for Ricardo Scales, a composer, civic virtuoso, and cultural 
 - **Dev server**: `npm run dev` (runs on port 5000)
 - **Build**: `npm run build`
 
+## Contact Form
+- Uses Formsubmit.co (AJAX endpoint) to send form submissions to ricardoscalespianist@gmail.com
+- No backend required — works on static hosting (Vercel, Netlify, etc.)
+- First submission triggers an email confirmation from Formsubmit to the recipient email
+- Form includes: Name, Email, Event Type, Message fields with success/error feedback
+
 ## Recent Changes
+- 2026-02-27: Fixed contact form to actually send messages
+  - Added form submission logic using Formsubmit.co AJAX API
+  - Updated all contact emails to ricardoscalespianist@gmail.com
+  - Added form state management (controlled inputs, loading, success/error states)
+  - Compatible with Vercel and other static hosting platforms
 - 2026-02-12: Completed project import to Replit environment
   - Installed npm dependencies
   - Configured Vite for Replit proxy (allowedHosts, HMR on port 443)
   - Cleaned up duplicate workflows
 
 ## User Preferences
-- (None recorded yet)
+- Deploys to Vercel
+- Contact email: ricardoscalespianist@gmail.com
