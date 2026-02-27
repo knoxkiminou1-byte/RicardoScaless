@@ -283,39 +283,21 @@ function NotableAchievements() {
               Letter from Johnny Mathis via Amy Farrell, PR Director for Johnny Mathis & Jon Mat Records — January 2025
             </p>
             <div style={{
-              backgroundColor: '#0d0d0d',
-              padding: '40px',
-              borderRadius: '8px',
-              border: '1px solid rgba(194, 136, 64, 0.2)',
-              marginBottom: '30px',
-              lineHeight: '1.8',
-              fontSize: '1.05rem',
-              color: 'rgba(255,255,255,0.85)'
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '30px'
             }}>
-              <p style={{ marginBottom: '20px', fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>
-                To The Jones Memorial Methodist Men Honorees, and the Congregation of United Methodist Church:
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                Johnny Mathis sends his sincere thanks to you all for this kind acknowledgement of appreciation & invitation to attend this wonderful celebration. He is truly humbled on this special occasion to be included as an Honorable Mention in such stellar company as these African American Bay Area Legends...
-              </p>
-              <p style={{
-                textAlign: 'center',
-                color: '#C28840',
-                fontStyle: 'italic',
-                fontSize: '1.1rem',
-                margin: '30px 0',
-                lineHeight: '1.6'
-              }}>
-                Jazz musician & composer Mr. John Handy, virtuoso pianist Mr. Ricardo Scales, composer & electronic musician Mr. Todd Cochran, and former San Francisco Mayor Mr. Willie Brown
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                And so, whether his path has crossed with yours directly or not, Johnny Mathis is beyond grateful to be counted among these African American Bay Area Legends. He sends his deep thanks again for this acknowledgement, and his heartfelt congratulations to all the honorees on their inestimable & inspiring achievements.
-              </p>
-              <p style={{ marginBottom: '5px', fontStyle: 'italic' }}>All The Best,</p>
-              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', marginTop: '20px' }}>
-                Via Amy Farrell<br />
-                PR Director for Johnny Mathis & Jon Mat Records
-              </p>
+              <img
+                src="/attached_assets/johnny_mathis_letter-1.png"
+                alt="Letter from Johnny Mathis recognizing Ricardo Scales as an African American Bay Area Legend"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  borderRadius: '8px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+                  border: '1px solid rgba(194, 136, 64, 0.3)'
+                }}
+              />
             </div>
             <blockquote style={{
               fontSize: '1.3rem',
